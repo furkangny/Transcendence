@@ -6,7 +6,7 @@ export function HeroTitle() {
       <h1 className={styles.heroTitle}>
         Welcome to the{" "}
         <span className="text-pong-accent font-playfair">
-          BHV ping pong club
+          BEE'PING PONG
         </span>
       </h1>
       <h3 className={styles.heroTagline}>

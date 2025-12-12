@@ -115,7 +115,7 @@ export function Members() {
               The Club Directory
             </h2>
             <p className="text-sm text-white/60 mt-[-1rem] mb-6 pl-6">
-              Explore the full roster of BHV PONG — find future teammates,
+              Explore the full roster of BEE PONG — find future teammates,
               rivals, or just someone to spectate with.
             </p>
             <AllMembersList />

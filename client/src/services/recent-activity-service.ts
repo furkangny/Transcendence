@@ -176,7 +176,7 @@ export async function startRecentActivityListener(): Promise<void> {
   const initialActivities = readStoredActivities();
   if (initialActivities.length === 0) {
     if (ul) {
-      ul.innerHTML = `<li class="text-pong-dark-secondary text-center">No matches have been played in the BHV Club yet — be the first to serve!</li>`;
+      ul.innerHTML = `<li class="text-pong-dark-secondary text-center">No matches have been played in the BEE Club yet — be the first to serve!</li>`;
     }
   } else {
     if (ul) {

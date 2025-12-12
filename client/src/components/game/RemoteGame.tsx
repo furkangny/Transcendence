@@ -43,7 +43,7 @@ export function RemoteGame() {
   	</button>
 
   	<h1 id="title" class="${styles.gameTitle}">
-      BHV <span class="text-pong-dark-accent font-orbitron">PONG</span>
+      BEE <span class="text-pong-dark-accent font-orbitron">PONG</span>
   	</h1>
     <h2 class="text-center font-orbitron text-2xl my-8 font-bold" id="playerSide"></h2>
 

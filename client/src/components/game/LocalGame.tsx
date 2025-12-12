@@ -70,7 +70,7 @@ export function LocalGame() {
   	</button>
 
   	<h1 id="title" class="${styles.gameTitle}">
-      BHV <span class="text-pong-dark-accent font-orbitron">PONG</span>
+      BEE <span class="text-pong-dark-accent font-orbitron">PONG</span>
   	</h1>
 
    	<div class="flex items-center justify-center flex-col w-full" style="min-height:${canvasHeight}px;">
@@ -104,7 +104,7 @@ export function LocalGame() {
     "backdrop-blur-md absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 text-center text-2xl md:text-3xl font-bold text-pong-sport-muted px-6 py-4 rounded-xl shadow-lg flex flex-col gap-3 items-center justify-center";
   startMessage.innerHTML = `
   <p>Press <span class="text-pong-dark-accent">F</span> to Serve</p>
-  <p class="text-sm mt-2 font-normal">Welcome to the BHV Lounge — let the rally begin.</p>
+  <p class="text-sm mt-2 font-normal">Welcome to the BEE Lounge — let the rally begin.</p>
 `;
   container.appendChild(startMessage);
 

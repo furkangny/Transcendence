@@ -1,6 +1,6 @@
 # Game Service Backend
 
-This service powers the real-time and stats features for the BHV Pong game, including multiplayer matches, player stats, invites, and recent activity.
+This service powers the real-time and stats features for the BEE Pong game, including multiplayer matches, player stats, invites, and recent activity.
 
 ---
 

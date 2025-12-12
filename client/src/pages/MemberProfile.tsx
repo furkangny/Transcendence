@@ -303,7 +303,7 @@ export async function MemberProfile(id: number) {
   } else if (!hasPerformanceData) {
     right.appendChild(
       NoPerformanceData({
-        spanText: "This player hasn’t stepped onto the BHV court yet.",
+        spanText: "This player hasn’t stepped onto the BEE court yet.",
         isMember: true,
       })
     );

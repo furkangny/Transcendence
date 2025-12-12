@@ -15,7 +15,7 @@ export async function hydrateBlocked() {
   const blocked = await getBlockedUsers();
 
   if (!blocked.length) {
-    list.innerHTML = `<li class="text-pong-dark-secondary text-center py-2 text-sm md:text-lg">Your blocklist is as clear as the BHV hotel pool.</li>`;
+    list.innerHTML = `<li class="text-pong-dark-secondary text-center py-2 text-sm md:text-lg">Your blocklist is as clear as the BEE hotel pool.</li>`;
     return;
   }
 

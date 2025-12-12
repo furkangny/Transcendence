@@ -21,7 +21,7 @@ export function LeaderboardPreview(props: { user: UserProfile }) {
   const { user } = props;
 
   return (
-    <div className="bg-pong-secondary/10 rounded-lg shadow-md p-6 md:p-10 w-full max-w-5xl mx-auto border border-pong-dark-secondary/10">
+    <div className="bg-gradient-to-br from-pong-gold/10 via-pong-light-bg/50 to-amber-500/10 rounded-2xl shadow-[0_8px_32px_rgba(251,191,36,0.15)] p-6 md:p-10 w-full max-w-5xl mx-auto border border-pong-gold/30 backdrop-blur-xl">
       <h2
         className={`
           flex items-center gap-3
@@ -29,8 +29,8 @@ export function LeaderboardPreview(props: { user: UserProfile }) {
           ${fontSizes.smallTitleFontSize}
         `}
       >
-        <i className="fa-solid fa-trophy text-pong-dark-accent"></i>
-        <span>BHV Club’s Elite</span>
+        <i className="fa-solid fa-trophy text-pong-gold drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"></i>
+        <span className="bg-gradient-to-r from-pong-gold to-amber-400 bg-clip-text text-transparent">BEE Club's Elite</span>
       </h2>
 
       <ol
@@ -39,8 +39,8 @@ export function LeaderboardPreview(props: { user: UserProfile }) {
       ></ol>
 
       <div className="flex items-center justify-between mt-8 gap-4">
-        <div className="bg-pong-dark-bg/50 rounded-xl px-4 py-3 border border-white/10 text-white/70">
-          <span className="block text-xs md:text-sm">
+        <div className="bg-pong-dark-bg/60 rounded-xl px-4 py-3 border border-pong-gold/20 text-pong-dark-primary/80 backdrop-blur-md">
+          <span className="block text-xs md:text-sm italic">
             {getTagline(user.rank)}
           </span>
         </div>

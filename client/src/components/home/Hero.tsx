@@ -14,9 +14,9 @@ export function Hero(props: { user: UserProfile }) {
   const { user } = props;
 
   return (
-    <div className="p-6 md:p-10 shadow-xl shadow-black/50 w-full max-w-5xl mx-auto rounded-lg backdrop-blur-md">
+    <div className="p-6 md:p-10 shadow-[0_8px_40px_rgba(251,191,36,0.2)] w-full max-w-5xl mx-auto rounded-2xl backdrop-blur-xl bg-gradient-to-br from-pong-dark-bg/80 via-pong-light-bg/60 to-pong-gold/10 border border-pong-gold/30">
       <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
-        <div className="w-28 h-28 rounded-full p-[3px] bg-gradient-to-br from-pong-accent via-pong-dark-accent to-pong-accent shadow-lg hover:scale-105 transition-transform duration-300">
+        <div className="w-28 h-28 rounded-full p-[3px] bg-gradient-to-br from-pong-gold via-amber-400 to-yellow-300 shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:scale-105 hover:shadow-[0_0_30px_rgba(251,191,36,0.5)] transition-all duration-300">
           <img
             src={user.avatar_url}
             alt="Profile Avatar"
@@ -29,17 +29,17 @@ export function Hero(props: { user: UserProfile }) {
             className={`${fontSizes.titleFontSize} font-bold text-pong-dark-primary mb-3`}
           >
             Welcome, {getWelcomeTitle(user)}{" "}
-            <span className="text-pong-dark-accent">{user.username}</span>!
+            <span className="bg-gradient-to-r from-pong-gold to-amber-400 bg-clip-text text-transparent">{user.username}</span>!
           </h2>
           <p
-            className={`text-pong-dark-secondary ${fontSizes.bodyFontSize} font-semibold mb-3`}
+            className={`text-pong-gold ${fontSizes.bodyFontSize} font-semibold mb-3`}
           >
-            Ranked #{user.rank} in BHV Club • Level {user.level}
+            Ranked #{user.rank} in BEE Club • Level {user.level}
           </p>
           <RankBadge rank={user.rank} />
-          <hr className="my-4 border-pong-accent/20" />
+          <hr className="my-4 border-pong-gold/30" />
           <p
-            className={`text-pong-dark-primary/80 italic ${fontSizes.smallTextFontSize} mb-3`}
+            className={`text-pong-dark-primary/70 italic ${fontSizes.smallTextFontSize} mb-3`}
           >
             {generateRankQuote(user.rank)}
           </p>

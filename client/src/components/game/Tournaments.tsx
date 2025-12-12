@@ -100,7 +100,7 @@ export function Tournaments() {
       <i class="fa-solid fa-circle-half-stroke"></i>
     </button>
     <h1 id="title" class="${styles.gameTitle}">
-      BHV <span class="text-pong-dark-accent font-orbitron">PONG</span>
+      BEE <span class="text-pong-dark-accent font-orbitron">PONG</span>
     </h1>
 	
     <div class="flex items-center justify-center flex-col w-full" style="min-height:${canvasHeight}px;">

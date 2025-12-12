@@ -70,7 +70,7 @@ export function NavBar() {
       ${styles.navLink}
       ${
         isActive
-          ? "bg-pong-dark-accent/30 text-white"
+          ? "bg-gradient-to-r from-pong-gold/30 to-amber-500/20 text-white shadow-[0_0_15px_rgba(251,191,36,0.3)]"
           : "text-pong-dark-primary"
       }
     `;
@@ -78,15 +78,15 @@ export function NavBar() {
       <i class="fa-solid ${icon} text-xl md:text-2xl transition-transform duration-300 group-hover:scale-110
         ${
           isActive
-            ? "text-pong-dark-accent"
-            : "text-pong-dark-primary group-hover:text-white md:group-hover:text-pong-dark-accent"
+            ? "text-pong-gold drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
+            : "text-pong-dark-primary group-hover:text-white md:group-hover:text-pong-gold"
         }
       "></i>
       <span class="
         ${
           isActive
-            ? "text-white"
-            : "text-pong-dark-primary group-hover:text-white md:group-hover:text-pong-dark-accent"
+            ? "text-white font-semibold"
+            : "text-pong-dark-primary group-hover:text-white md:group-hover:text-pong-gold"
         }
         transition-colors duration-300
       ">${label}</span>
@@ -132,12 +132,12 @@ export function NavBar() {
     link.href = path;
     link.setAttribute("data-link", "true");
     link.className = `
-      flex items-center gap-3 px-4 py-2 rounded-lg 
-      text-pong-dark-primary hover:bg-pong-dark-accent/30 hover:text-white transition
-      focus:outline-none focus:bg-pong-dark-accent/40
+      flex items-center gap-3 px-4 py-2 rounded-xl 
+      text-pong-dark-primary hover:bg-gradient-to-r hover:from-pong-gold/20 hover:to-amber-500/10 hover:text-white transition
+      focus:outline-none focus:bg-pong-gold/30
     `;
     link.innerHTML = `
-      <i class="fa-solid ${icon} w-5 text-sm"></i>
+      <i class="fa-solid ${icon} w-5 text-sm text-pong-gold"></i>
       <span>${label}</span>
     `;
     item.appendChild(link);

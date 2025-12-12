@@ -33,7 +33,7 @@ export function Profile() {
         <main className={styles.pageContent}>
           <SecondaryHeader
             title="Member Profile"
-            subtitle="Your identity, matches & achievements in the BHV Club."
+            subtitle="Your identity, matches & achievements in the BEE Club."
           />
 
           <div className={containerClassName}>
@@ -49,7 +49,7 @@ export function Profile() {
               </div>
             ) : (
               <NoPerformanceData
-                spanText="The club’s leaderboard awaits you! Play your first match to start building your stats, earn XP, and unlock exclusive BHV achievements."
+                spanText="The club’s leaderboard awaits you! Play your first match to start building your stats, earn XP, and unlock exclusive BEE achievements."
                 isMember={false}
               />
             )}

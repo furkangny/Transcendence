@@ -9,10 +9,10 @@ export function HeroCta() {
         data-link
       >
         <i className={`fa-solid fa-ticket ${styles.lightPrimaryBtnIcon}`}></i>
-        Enter The Club
+        Enter The Game Vızzz
       </a>
       <p className={styles.heroSubtitle}>
-        “Take your first step into the court”
+        “A honeybee’s wings beat about 200 times per second”
       </p>
     </div>
   );
