@@ -8,43 +8,43 @@ export function RemoteLink() {
   }, 0);
 
   return (
-    <div className="w-full">
-      <div className="line-divider relative w-full flex items-center justify-center mb-6">
-        <i className="fa-solid fa-table-tennis-paddle-ball"></i>
-      </div>
-
-      <div className="flex flex-col gap-4 w-full">
-        <button
-          type="button"
-          id="google-signin-btn"
-          className={`
-			${styles.lightPrimaryBtn}
-			border border-pong-primary/20
-			!text-pong-primary !bg-white
-			hover:!text-pong-accent hover:!bg-pong-secondary/10
-          `}
-        >
-          <i
-            className={`fa-brands fa-google ${styles.lightPrimaryBtnIcon}`}
-          ></i>
-          enter with google
-        </button>
-        <button
-          type="button"
-          id="ft-signin-btn"
-          className={`
-    		${styles.lightPrimaryBtn}
-			border border-pong-primary/20
-            !bg-[#2c2c2c] !text-white
-            hover:!bg-pong-accent hover:!text-white
-          `}
-        >
-          <i
-            className={`fa-solid fa-chess-knight ${styles.lightPrimaryBtnIcon}`}
-          ></i>
-          enter with 42
-        </button>
-      </div>
+    <div className="flex gap-4">
+      <a
+        href="#"
+        id="google-signin-btn"
+        className="
+          group flex-1 flex items-center justify-center gap-3 
+          px-6 py-4 
+          bg-neutral-900/80 hover:bg-neutral-800/90
+          border border-neutral-700/50 hover:border-amber-500/50
+          rounded-xl 
+          text-neutral-300 hover:text-amber-400
+          font-semibold
+          transition-all duration-300
+          hover:shadow-[0_4px_20px_rgba(251,191,36,0.15)]
+        "
+      >
+        <i className="fa-brands fa-google text-xl group-hover:scale-110 transition-transform duration-300"></i>
+        <span>Google</span>
+      </a>
+      <a
+        href="#"
+        id="ft-signin-btn"
+        className="
+          group flex-1 flex items-center justify-center gap-3 
+          px-6 py-4 
+          bg-neutral-900/80 hover:bg-neutral-800/90
+          border border-neutral-700/50 hover:border-amber-500/50
+          rounded-xl 
+          text-neutral-300 hover:text-amber-400
+          font-semibold
+          transition-all duration-300
+          hover:shadow-[0_4px_20px_rgba(251,191,36,0.15)]
+        "
+      >
+        <i className="fa-brands fa-42-group text-xl group-hover:scale-110 transition-transform duration-300"></i>
+        <span>42 Intra</span>
+      </a>
     </div>
   );
 }
