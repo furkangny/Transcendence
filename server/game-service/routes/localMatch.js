@@ -18,6 +18,7 @@ function generateNewRoomId(params) {
 
 export function localMatch(connection) {
     let roomId = generateNewRoomId();
+    let isFirstMessage = true;
 
     rooms[roomId] = {
         paddleLeftY: PADDLE_INITIAL_Y,
@@ -27,8 +28,8 @@ export function localMatch(connection) {
         keypressd: [],
         rightPlayerScore: 0,
         leftPlayerScore: 0,
-        flagX: false,
-        flagY: false,
+        flagX: Math.random() < 0.5,  // Rastgele başlangıç yönü
+        flagY: Math.random() < 0.5,  // Rastgele başlangıç yönü
         ballSpeed: 5,
         count: 0,
     };
@@ -37,7 +38,14 @@ export function localMatch(connection) {
     });
     connection.on("message", (msg) => {
         try {
-            rooms[roomId] = JSON.parse(msg);
+            const clientState = JSON.parse(msg);
+            // İlk mesajda client'ın flag değerlerini yoksay, server'ın başlangıç değerlerini koru
+            if (isFirstMessage) {
+                rooms[roomId].keypressd = clientState.keypressd || [];
+                isFirstMessage = false;
+            } else {
+                rooms[roomId] = clientState;
+            }
         } catch (error) {
             connection.send(JSON.stringify({ error: "Invalid JSON format" }));
             return;
@@ -98,9 +106,11 @@ export function localMatch(connection) {
             if (rooms[roomId].ballX <= 0) rooms[roomId].rightPlayerScore += 1;
             rooms[roomId].paddleLeftY = 240;
             rooms[roomId].paddelRightY = 240;
-            rooms[roomId].ballX = 1000 / 2;
+            rooms[roomId].ballX = 500;
             rooms[roomId].ballY = 300;
             rooms[roomId].ballSpeed = 5;
+            rooms[roomId].flagX = Math.random() < 0.5;  // Rastgele yön
+            rooms[roomId].flagY = Math.random() < 0.5;  // Rastgele yön
         }
         connection.send(JSON.stringify(rooms[roomId]));
     });

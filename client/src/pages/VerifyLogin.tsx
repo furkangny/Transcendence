@@ -22,16 +22,7 @@ export function VerifyLogin() {
       : "Summon the code from your app";
 
   return (
-    <section className="relative overflow-hidden w-full min-h-screen bg-gradient-to-br from-black via-neutral-950 to-black">
-      {/* Animasyonlu Arka Plan Efektleri */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-amber-500/15 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-1/3 -right-32 w-96 h-96 bg-yellow-500/10 rounded-full blur-3xl animate-pulse delay-700"></div>
-      </div>
-
-      {/* Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(251,191,36,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(251,191,36,0.03)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
-
+    <section className="relative overflow-hidden w-full min-h-screen bg-black">
       <Overlay />
       
       {/* Ana İçerik */}
@@ -39,17 +30,14 @@ export function VerifyLogin() {
         <div className="w-full max-w-md mx-auto animate-fadeInUp">
           {/* Ana Kart */}
           <div className="relative group">
-            {/* Dış Glow Efekti */}
-            <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 rounded-3xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
-            
             {/* Form Container */}
-            <div className="relative bg-black/90 backdrop-blur-2xl rounded-3xl border border-amber-500/20 p-8">
+            <div className="relative bg-neutral-900 rounded-2xl border border-neutral-800 p-8">
               {/* Üst Dekoratif Çizgi */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 rounded-b-full"></div>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500 rounded-b-full"></div>
 
               {/* Başlık */}
               <div className="text-center mb-8 pt-4">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-600 rounded-2xl shadow-lg shadow-amber-500/30 mb-4">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-2xl mb-4">
                   <i className="fa-solid fa-shield-halved text-black text-2xl"></i>
                 </div>
                 <h1 className="text-2xl md:text-3xl font-black text-white mb-2">Verify Your Identity</h1>
@@ -65,7 +53,7 @@ export function VerifyLogin() {
                 <button
                   type="submit"
                   id="submit-btn"
-                  className="relative w-full py-4 px-6 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 hover:from-amber-400 hover:via-yellow-400 hover:to-amber-400 text-black font-bold text-lg rounded-xl shadow-[0_4px_20px_rgba(251,191,36,0.4)] hover:shadow-[0_6px_30px_rgba(251,191,36,0.5)] transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
+                  className="relative w-full py-4 px-6 bg-amber-500 hover:bg-amber-400 text-black font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98]"
                   aria-busy="false"
                 >
                   <span id="spinner" className="hidden absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></span>

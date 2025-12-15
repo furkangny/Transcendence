@@ -21,12 +21,15 @@ export function RemoteGame() {
     document.documentElement.clientHeight || 0,
     window.innerHeight || 0
   );
-  const canvasWidth = Math.min(1000, vw * 0.95);
-  const canvasHeight = Math.min(600, vh * 0.7);
+  const canvasWidth = Math.min(1000, vw * 0.9);
+  const canvasHeight = Math.min(500, vh * 0.55);
+
+  // Prevent page scroll during game
+  document.body.style.overflow = "hidden";
 
   // Create a container element for the game
   const container = document.createElement("div");
-  container.className = styles.gameContainer;
+  container.className = `${styles.gameContainer} overflow-hidden`;
   container.id = "game-screen";
   container.dataset.theme = localStorage.getItem("gameTheme") || "dark";
 
@@ -157,11 +160,16 @@ export function RemoteGame() {
     );
 
     exit.addEventListener("click", () => {
+      document.body.style.overflow = ""; // Restore scroll when leaving
       socket?.close();
       navigateTo("/arena");
     });
     let keys: Record<string, boolean> = {};
     window.addEventListener("keydown", (key: KeyboardEvent) => {
+      // Prevent default scrolling for arrow keys
+      if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(key.key)) {
+        key.preventDefault();
+      }
       keys[key.key] = true;
     });
 
@@ -380,7 +388,6 @@ class FlowField {
   private height: number = 100;
   private canvasWidth: number = 1000;
   private canvasHeight: number = 600;
-  private ballPulse: number = 0;
   private keys: Record<string, boolean>;
   private gameState: GameState;
   private deps: FlowFieldDependencies;
@@ -541,27 +548,12 @@ class FlowField {
       0,
       Math.PI * 2
     );
-    this.ctx.shadowColor = isDark ? "#FFD700" : "#00B894";
-    this.ctx.shadowBlur = 24;
     this.ctx.fillStyle = isDark ? "#FFD700" : "#00B894";
     this.ctx.fill();
     this.ctx.lineWidth = 3;
     this.ctx.strokeStyle = isDark ? "#fff" : "#23272f";
     this.ctx.stroke();
     this.ctx.restore();
-    this.ballPulse += 0.08;
-    this.ctx.globalAlpha = 0.25 + 0.15 * Math.sin(this.ballPulse);
-    this.ctx.beginPath();
-    this.ctx.arc(
-      this.gameState.ballX,
-      this.gameState.ballY,
-      13 + 10 + 5 * Math.abs(Math.sin(this.ballPulse)),
-      0,
-      Math.PI * 2
-    );
-    this.ctx.fillStyle = isDark ? "#FFD700" : "#00B894";
-    this.ctx.fill();
-    this.ctx.globalAlpha = 1;
   }
   private drawCountdown(): void {
     const isDark =

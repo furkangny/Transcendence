@@ -50,7 +50,7 @@ export function DeleteAccount() {
               <ul className="text-pong-dark-primary/80 text-base list-disc list-inside space-y-1">
                 <li>Your profile will be deleted</li>
                 <li>Match history and stats will be erased</li>
-                <li>You will lose access to the BEE Club</li>
+                <li>You will lose access to the BEEPONG</li>
               </ul>
             </div>
 

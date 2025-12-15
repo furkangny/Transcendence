@@ -19,10 +19,8 @@ export const styles = {
   	relative
   `,
   customSectionStyles: `
-  	bg-gradient-to-br from-pong-gold/10 via-pong-bg/60 to-pong-secondary/10 
-	shadow-[0_8px_32px_rgba(251,191,36,0.15)]
-  	rounded-2xl border border-pong-gold/30
-  	backdrop-blur-xl
+  	bg-neutral-900
+	rounded-2xl border border-neutral-800
   	max-w-xl w-full mx-auto 
   	px-4 md:px-8 py-10 md:py-14
   `,
@@ -42,8 +40,7 @@ export const styles = {
 	md:text-[clamp(3rem,8vw,7rem)]
 	xl:text-[clamp(4rem,10vw,9.25rem)]
 	md:leading-[1.1]
-	bg-gradient-to-r from-pong-gold via-amber-400 to-yellow-300 bg-clip-text text-transparent
-	hover:from-yellow-300 hover:via-pong-gold hover:to-amber-500
+	text-amber-400
 	transition-all duration-500
   `,
   heroTagline: `
@@ -63,8 +60,6 @@ export const styles = {
   heroMascot: `
 	w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24
 	absolute top-8 right-8 lg:top-10 lg:right-10
-	animate-myFloat
-	drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]
   `,
   // === End Hero styles ===
 
@@ -78,15 +73,13 @@ export const styles = {
 	${fontSizes.buttonFontSize}
 	font-bold capitalize tracking-wider
     text-black 
-	bg-gradient-to-r from-pong-gold to-amber-400
-	hover:from-amber-400 hover:to-pong-gold
+	bg-amber-500
+	hover:bg-amber-400
     rounded-xl 
-	shadow-[0_4px_20px_rgba(251,191,36,0.4)]
-	hover:shadow-[0_4px_30px_rgba(245,158,11,0.5)]
     transition-all duration-300 
 	transform active:scale-[0.97]
     focus:outline-none focus:ring-2 
-	focus:ring-pong-gold focus:ring-offset-2 focus:ring-offset-pong-bg
+	focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-pong-bg
   `,
   lightPrimaryBtnIcon: `
 	transition-transform duration-300 
@@ -99,14 +92,12 @@ export const styles = {
     capitalize
     px-4 md:px-6 py-2
     rounded-xl
-    bg-gradient-to-r from-pong-gold to-amber-500
+    bg-amber-500
     text-black
     transition-all duration-300
-	shadow-[0_2px_12px_rgba(251,191,36,0.3)]
-    hover:from-amber-500 hover:to-pong-gold
-	hover:shadow-[0_4px_20px_rgba(251,191,36,0.4)]
+    hover:bg-amber-400
     focus:outline-none
-    focus:ring-2 focus:ring-pong-gold/50
+    focus:ring-2 focus:ring-amber-500/50
     active:scale-[0.98]
 	text-center
   `,
@@ -116,15 +107,14 @@ export const styles = {
 	${fontSizes.buttonFontSize}
 	font-semibold
 	text-black
-	bg-gradient-to-r from-pong-gold via-amber-400 to-yellow-400
+	bg-amber-500
 	background-size: 200% 200%
 	rounded-xl
-	shadow-[0_4px_20px_rgba(251,191,36,0.4)]
 	flex items-center justify-center
-	hover:shadow-[0_6px_30px_rgba(245,158,11,0.5)]
+	hover:bg-amber-400
 	focus:outline-none
 	focus:ring-2
-	focus:ring-pong-gold/60
+	focus:ring-amber-500/60
 	focus:ring-offset-2
 	focus:ring-offset-pong-dark-bg
 	active:scale-[0.97]
@@ -185,14 +175,13 @@ export const styles = {
   	w-10 h-12 md:w-14 md:h-16
   	${fontSizes.inputFontSize}
 	text-center font-bold tracking-widest
-  	border border-pong-gold/30
-  	rounded-xl shadow-md
-  	caret-pong-gold
-  	bg-pong-light-bg/60 backdrop-blur
+  	border border-neutral-700
+  	rounded-xl
+  	caret-amber-500
+  	bg-neutral-900
   	text-pong-primary placeholder:text-pong-primary/30
   	transition-all duration-300 ease-out focus:scale-105
-  	focus:outline-none focus:ring-2 focus:ring-pong-gold/70 focus:border-pong-gold
-  	focus:shadow-[0_0_20px_rgba(251,191,36,0.3)]
+  	focus:outline-none focus:ring-2 focus:ring-amber-500/70 focus:border-amber-500
   `,
   showPassIcon: `
 	fa-solid fa-eye fa-eye-slash 
@@ -209,21 +198,19 @@ export const styles = {
   // === Start Form styles ===
   mainForm: `
   	max-w-md w-full mx-auto
-  	bg-gradient-to-br from-pong-gold/10 via-pong-bg/70 to-amber-500/10
-  	shadow-[0_8px_32px_rgba(251,191,36,0.2)]
+  	bg-neutral-900
 	rounded-2xl
-  	backdrop-blur-xl border border-pong-gold/20
+  	border border-neutral-800
   	flex flex-col items-center gap-6
   	px-8 py-12
 	animate-fadeInUp
   `,
   secForm: `
   	w-full max-w-md mx-auto
-  	bg-pong-light-bg/70 shadow-[0_4px_20px_rgba(251,191,36,0.15)] rounded-2xl
+  	bg-neutral-900 rounded-2xl
   	flex flex-col items-center gap-6
   	px-8 py-12
-  	backdrop-blur-xl
-  	border border-pong-gold/20
+  	border border-neutral-800
   `,
   customFormLink: `
 	text-pong-gold 
@@ -233,13 +220,11 @@ export const styles = {
   `,
   darkForm: `
   	w-full max-w-lg 
-	bg-gradient-to-br from-pong-dark-custom/90 to-pong-dark-bg/80
-	border border-pong-gold/30 
+	bg-neutral-900
+	border border-neutral-800 
 	rounded-2xl 
-	shadow-[0_8px_32px_rgba(251,191,36,0.2)]
 	px-8 py-10 
 	flex flex-col items-center
-	backdrop-blur-xl
   `,
   // === End Form styles ===
 
@@ -248,14 +233,13 @@ export const styles = {
 	tracking-tight leading-tight
 	font-bold
 	text-4xl md:text-5xl lg:text-6xl xl:text-7xl
-	bg-gradient-to-r from-pong-gold via-amber-400 to-yellow-300 bg-clip-text text-transparent
+	text-amber-400
   `,
   titleSpanDark: `
 	font-orbitron 
-	text-pong-gold 
+	text-amber-400 
 	relative inline-block 
 	underline-animated
-	drop-shadow-[0_0_10px_rgba(251,191,36,0.5)]
   `,
   subtitleDark: `
 	font-semibold 
@@ -272,10 +256,9 @@ export const styles = {
   // === Start Top Bar styles ===
   navBarStyle: `
     fixed top-0 left-0 right-0 z-40 
-	h-16 bg-pong-dark-bg/80 backdrop-blur-xl border-b border-pong-gold/30 
+	h-16 bg-black border-b border-neutral-800 
 	px-4
 	flex items-center justify-center gap-8 
-	shadow-[0_4px_20px_rgba(251,191,36,0.15)]
   `,
   searchBarStyle: `
   	input-field-dark
@@ -320,9 +303,9 @@ export const styles = {
   `,
   navSettingsDropdown: `
     absolute left-0 top-full w-[90vw] max-w-xs md:left-full md:top-0 md:ml-2 md:w-60
-    bg-pong-dark-bg/95 backdrop-blur-xl rounded-xl shadow-[0_8px_32px_rgba(251,191,36,0.2)] z-50 flex flex-col gap-1
-	border border-pong-gold/30
-    p-3 border border-pong-gold/20 hidden
+    bg-neutral-900 rounded-xl z-50 flex flex-col gap-1
+	border border-neutral-800
+    p-3 hidden
     transition-all duration-200 
   `,
   navLink: `
@@ -336,40 +319,34 @@ export const styles = {
   // === Start Custom Cards styles ===
   cardOneStyle: `
   	flex flex-col gap-6
-	bg-gradient-to-br from-pong-dark-custom/90 to-pong-light-bg/80 
-	border border-pong-gold/30 
+	bg-neutral-900 
+	border border-neutral-800 
 	w-full max-w-5xl 
 	p-8 md:p-10 
 	rounded-2xl 
-	shadow-[0_8px_32px_rgba(251,191,36,0.15)]
-	backdrop-blur-xl
   `,
   badgeStyle: `
 	inline-flex items-center 
 	gap-2 px-4 py-1.5 
 	rounded-full 
-	shadow-[0_2px_12px_rgba(251,191,36,0.3)]
-	bg-gradient-to-r from-pong-gold/80 to-amber-500/80
-	backdrop-blur 
+	bg-amber-500
 	text-black font-semibold
 	text-sm 
-	border border-pong-gold/30 
-	animate-neonPulse
+	border border-amber-600 
 	relative group
 	cursor-pointer
   `,
   badgeHoverCard: `
   	hidden group-hover:block
   	absolute top-6 -right-4 w-24 h-24 md:w-32 md:h-32 
-	rounded-full shadow-[0_0_20px_rgba(251,191,36,0.4)] bg-pong-gold/20
+	rounded-full bg-amber-500/20
     transform scale-90 
     transition-all duration-500 ease-out 
     group-hover:scale-100
 	animate-opacity
   `,
   badgeHoverCardImage: `
-  	w-full h-full object-cover rounded-full shadow-sm
-	hover:shadow-[0_0_20px_rgba(251,191,36,0.5)]
+  	w-full h-full object-cover rounded-full
     hover:scale-110
     transition-transform duration-300 ease-out
   `,
@@ -385,23 +362,20 @@ export const styles = {
 	border border-transparent hover:border-pong-gold/20
   `,
   membersListStyle: `
-	bg-gradient-to-br from-pong-dark-bg/80 to-pong-light-bg/60
+	bg-neutral-900
 	rounded-2xl
-	border border-pong-gold/30
-	shadow-[0_8px_32px_rgba(251,191,36,0.15)] backdrop-blur-xl
+	border border-neutral-800
 	p-6 md:p-10
 	w-full max-w-5xl mx-auto
 	transition-all duration-300
-	hover:shadow-[0_12px_40px_rgba(251,191,36,0.2)]
   `,
   membersActiveBtn: `
 	text-base lg:text-lg font-semibold 
 	w-64 
 	text-center 
-	bg-gradient-to-r from-pong-gold to-amber-500 
+	bg-amber-500 
 	transition 
 	rounded-xl 
-	shadow-[0_4px_20px_rgba(251,191,36,0.4)]
 	text-black 
 	px-6 py-2 
 	cursor-pointer
@@ -410,13 +384,12 @@ export const styles = {
 	text-base lg:text-lg font-semibold 
 	w-64 
 	text-center 
-	bg-pong-light-bg/50 
-	hover:bg-gradient-to-r hover:from-pong-gold hover:to-amber-500 
+	bg-neutral-800 
+	hover:bg-amber-500 
 	transition 
 	rounded-xl 
-	shadow-md 
 	text-pong-dark-primary hover:text-black
-	border border-pong-gold/30
+	border border-neutral-700
 	px-6 py-2 
 	cursor-pointer
 `,
@@ -433,65 +406,54 @@ export const styles = {
   gameExitBtn: `
   	fixed top-16 md:top-20 left-5
 	text-2xl md:text-3xl
-  	p-2 rounded-full shadow-[0_2px_12px_rgba(251,191,36,0.3)]
-  	backdrop-blur-xl
-	bg-pong-dark-bg/60 border border-pong-gold/30
-	text-pong-gold hover:text-amber-400
+  	p-2 rounded-full
+	bg-neutral-900 border border-neutral-800
+	text-amber-500 hover:text-amber-400
   	transition-all duration-300 ease-in-out
-	hover:shadow-[0_4px_20px_rgba(251,191,36,0.4)]
   `,
   gameThemeBtn: `
   	fixed top-16 md:top-20 right-5
 	w-24
 	text-2xl md:text-3xl
-  	p-2 rounded-full shadow-[0_2px_12px_rgba(251,191,36,0.3)]
-  	backdrop-blur-xl
-	bg-pong-dark-bg/60 border border-pong-gold/30
-	text-pong-gold hover:text-amber-400
+  	p-2 rounded-full
+	bg-neutral-900 border border-neutral-800
+	text-amber-500 hover:text-amber-400
   	transition-all duration-300 ease-in-out
-	hover:shadow-[0_4px_20px_rgba(251,191,36,0.4)]
   `,
   gameTitle: `
   	font-orbitron
   	text-[8vw] md:text-[80px]
   	font-bold tracking-wide
   	animate-fadeInUp
-	bg-gradient-to-r from-pong-gold via-amber-400 to-yellow-300 bg-clip-text text-transparent
-	drop-shadow-[0_0_20px_rgba(251,191,36,0.5)]
+	text-amber-400
   `,
   gameCanvas: `
-	border-2 border-pong-gold/50
+	border-2 border-amber-500/50
 	rounded-xl 
-	shadow-[0_0_30px_rgba(251,191,36,0.3),0_0_60px_rgba(245,158,11,0.2)] 
-	backdrop-blur-sm 
 	transition-all duration-300
   `,
   gameTab: `
 	h-fit w-11/12 
 	max-w-lg 
 	absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-20 
-	shadow-[0_8px_40px_rgba(251,191,36,0.3)] backdrop-blur-xl 
 	flex-col items-center justify-center 
 	px-6 py-12 
-	rounded-2xl border border-pong-gold/30
-	bg-gradient-to-br from-pong-dark-bg/90 to-pong-light-bg/80
+	rounded-2xl border border-neutral-800
+	bg-neutral-900
 	text-center 
   `,
   // === End Game styles ===
 
   friendsListItemStyle: `
 	flex items-center justify-between gap-4 py-4 px-5 mb-4
-	bg-gradient-to-r from-pong-gold/10 via-pong-light-bg/50 to-amber-500/10
-	rounded-xl border border-pong-gold/30
-	shadow-[0_4px_20px_rgba(251,191,36,0.15)] hover:shadow-[0_8px_30px_rgba(251,191,36,0.2)] 
+	bg-neutral-800
+	rounded-xl border border-neutral-700
 	transition-all duration-300
 	hover:-translate-y-0.5
-	backdrop-blur-md
   `,
   friendsAvatarStyle: `
     w-10 h-10 md:w-14 md:h-14 rounded-full object-cover
-    ring-2 ring-pong-gold/50 transition-transform duration-300
+    ring-2 ring-amber-500/50 transition-transform duration-300
     group-hover:scale-105
-	shadow-[0_0_10px_rgba(251,191,36,0.3)]
   `,
 };

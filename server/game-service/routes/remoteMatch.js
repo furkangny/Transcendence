@@ -80,10 +80,12 @@ function gameLogic(gameState) {
 
         gameState.paddleLeftY = 240;
         gameState.paddelRightY = 240;
-        gameState.ballX = 1000 / 2;
+        gameState.ballX = 500;
         gameState.ballY = 300;
         gameState.ballSpeed = 3;
         gameState.hitCount = 0;
+        gameState.flagX = Math.random() < 0.5;  // Rastgele yön
+        gameState.flagY = Math.random() < 0.5;  // Rastgele yön
 
         // Start countdown after scoring (but not if game is over)
         if (
@@ -224,8 +226,8 @@ export function remoteMatch(connection, req) {
                 playerId: 1,
                 ballX: 500,
                 ballY: 300,
-                flagX: false,
-                flagY: false,
+                flagX: Math.random() < 0.5,  // Rastgele başlangıç yönü
+                flagY: Math.random() < 0.5,  // Rastgele başlangıç yönü
                 paddleLeftY: 240,
                 paddelRightY: 240,
                 keypressd: [],

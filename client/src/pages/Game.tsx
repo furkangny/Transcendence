@@ -1,7 +1,5 @@
 import { NavBar } from "@/components/layout/NavBar";
 import { styles } from "@/styles/styles";
-import { fontSizes } from "@/styles/fontSizes";
-import { SecondaryHeader } from "@/components/common/SecondaryHeader";
 import { navigateTo } from "@/utils/navigate-to-link";
 import { showInviteModal } from "@/utils/show-invite-modal";
 import { getCurrentUser } from "@/utils/user-store";
@@ -15,132 +13,107 @@ export function Game() {
 
   const gameModes = [
     {
-      title: "1 vs 1 — Lounge Duel",
+      title: "Local Duel",
+      subtitle: "1 vs 1 — Lounge Duel",
       text: "Challenge a friend beside you in an elegant local match. Pure skill, no lag — just legacy.",
+      icon: "fa-solid fa-users",
       href: "/duel",
     },
     {
-      title: "Tournament — Club Cup",
-      text: "Gather champions in-house. Compete in a local bracket to earn eternal bragging rights in the lounge.",
+      title: "Tournament",
+      subtitle: "Club Cup",
+      text: "Gather champions in-house. Compete in a local bracket to earn eternal bragging rights.",
+      icon: "fa-solid fa-trophy",
       href: "/tournament",
     },
     {
-      title: "1 vs 1 — Remote Arena",
-      text: "Face a rival across the network. Ping-pong from across the globe, prestige from your own paddle.",
+      title: "Remote Battle",
+      subtitle: "1 vs 1 — Online Arena",
+      text: "Face a rival across the network. Ping-pong from across the globe.",
+      icon: "fa-solid fa-globe",
       href: "/remote",
     },
   ];
 
   setTimeout(() => {
-    const playBtn = document.querySelectorAll(".game-mode-btn");
-    playBtn.forEach((btn, index) => {
-      if (index === 2) {
-        btn.addEventListener("click", async (e) => {
-          e.preventDefault();
+    const playBtns = document.querySelectorAll(".game-mode-item");
+    playBtns.forEach((btn, index) => {
+      btn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        if (index === 2) {
           showInviteModal(me);
-        });
-      } else {
-        btn.addEventListener("click", () => {
+        } else {
           navigateTo(gameModes[index].href);
-        });
-      }
+        }
+      });
     });
   }, 0);
 
   return (
-    <section className={styles.pageLayoutDark}>
+    <section className="relative overflow-hidden w-full min-h-screen bg-black">
       <NavBar />
-      <div className="w-full relative">
-        <main className={styles.pageContent}>
-          <SecondaryHeader
-            title="Choose Your Game Mode"
-            subtitle="Pick your playstyle and step into the arena of champions."
-          />
-
-          <div className="game-modes hidden lg:grid w-full max-w-7xl mx-auto grid-cols-3 rounded-lg overflow-hidden min-h-[570px] border border-collapse border-pong-dark-accent/20">
-            {gameModes.map((mode, index) => (
-              <div
-                key={index}
-                className="
-        			relative flex flex-col items-center justify-center text-center px-8 py-16
-        			bg-gradient-to-br from-black/70 via-pong-dark-custom/30 to-pong-accent/5
-        			border-x border-pong-dark-highlight/20
-        			hover:scale-[1.04] hover:-translate-y-1
-					first:hover:translate-x-1 last:hover:-translate-x-1
-        			transition-transform duration-500 ease-in-out cursor-pointer
-        			first:border-l-0 last:border-r-0
-      			"
-              >
-                <div className="absolute inset-0 opacity-0 hover:opacity-10 transition-opacity duration-500 bg-pong-accent blur-2xl"></div>
-
-                <div
-                  className="
-        			relative flex flex-col items-center justify-between gap-6 px-8 py-8
-        			rounded-3xl shadow-xl
-        			bg-gradient-to-br from-black/70 via-pong-dark-custom/40 to-pong-accent/10
-        			backdrop-blur-md
-					border border-collapse border-pong-dark-accent/20
-        			w-full h-full
-        			transition-all duration-500 ease-in-out
-      			"
-                >
-                  <h2
-                    className={`${fontSizes.smallTitleFontSize} font-bold text-white drop-shadow-lg tracking-tight`}
-                  >
-                    {mode.title}
-                  </h2>
-
-                  <p
-                    className={`${fontSizes.bodyFontSize} text-white/80 leading-relaxed mt-2 mb-4`}
-                  >
-                    {mode.text}
-                  </p>
-
-                  <button
-                    className="
-				  		game-mode-btn
-            	  		group relative flex items-center justify-center
-            	  		w-16 h-16 sm:w-20 sm:h-20 rounded-full
-            	  		bg-pong-accent hover:bg-pong-dark-accent
-            	  		shadow-lg shadow-pong-accent/40
-            	  		transition-all duration-300 ease-in-out
-            	  		active:scale-95 focus:outline-none
-          			"
-                    aria-label="Start Game"
-                  >
-                    <i
-                      className={`${fontSizes.bodyFontSize} fa-solid fa-play text-white ml-[1px] group-hover:scale-110 transition-transform duration-300`}
-                    />
-                    <span
-                      className="
-           		  		absolute -bottom-10 text-xs text-white/80
-           		  		bg-black/70 px-2 py-1 rounded
-           		  		opacity-0 group-hover:opacity-100
-           		  		transition-all duration-300 ease-in-out
-           		  		pointer-events-none
-           			  "
-                    >
-                      Play Now
-                    </span>
-                  </button>
-                </div>
-              </div>
-            ))}
+      
+      <div className="relative z-10 w-full">
+        <main className="px-4 md:px-8 lg:px-16 pt-24 md:pt-28 pb-12 min-h-screen">
+          {/* Başlık */}
+          <div className="text-center mb-12">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
+              Choose Your <span className="text-amber-400">Game Mode</span>
+            </h1>
+            <p className="text-neutral-400 text-base md:text-lg max-w-xl mx-auto">
+              Pick your playstyle and step into the arena of champions
+            </p>
           </div>
 
+          {/* Desktop - Basit Liste */}
+          <div className="hidden lg:block max-w-2xl mx-auto">
+            <div className="bg-neutral-900 rounded-2xl border border-neutral-800 overflow-hidden">
+              {gameModes.map((mode, index) => (
+                <div
+                  key={index}
+                  className="game-mode-item group flex items-center gap-5 p-5 cursor-pointer border-b border-amber-500/10 last:border-b-0 hover:bg-amber-500/5 transition-all duration-300"
+                >
+                  {/* İkon */}
+                  <div className="flex-shrink-0 w-14 h-14 rounded-xl bg-neutral-800 border border-neutral-700 flex items-center justify-center group-hover:bg-amber-500/20 group-hover:border-amber-500/30 transition-all duration-300">
+                    <i className={`${mode.icon} text-amber-400 text-xl group-hover:scale-110 transition-transform duration-300`}></i>
+                  </div>
+
+                  {/* İçerik */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-lg font-bold text-white group-hover:text-amber-400 transition-colors duration-300">
+                      {mode.title}
+                    </h3>
+                    <p className="text-neutral-500 text-sm mt-0.5">
+                      {mode.text}
+                    </p>
+                  </div>
+
+                  {/* Ok */}
+                  <div className="flex-shrink-0">
+                    <i className="fa-solid fa-chevron-right text-neutral-600 group-hover:text-amber-400 group-hover:translate-x-1 transition-all duration-300"></i>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Alt Bilgi */}
+            <p className="text-center text-neutral-500 text-sm mt-6">
+              <i className="fa-solid fa-info-circle mr-2 text-amber-500/50"></i>
+              Select a game mode to start playing
+            </p>
+          </div>
+
+          {/* Mobile Uyarı */}
           <div className="lg:hidden w-full flex flex-col items-center justify-center min-h-[40vh]">
-            <div className="bg-pong-dark-custom/80 border border-pong-accent/30 rounded-2xl shadow-lg px-6 py-10 max-w-sm mx-auto text-center">
-              <i className="fa-solid fa-mobile-screen text-3xl text-pong-accent mb-4"></i>
-              <h2
-                className={`${fontSizes.smallTitleFontSize} font-bold text-white mb-2`}
-              >
-                Not Available on Mobile
+            <div className="bg-neutral-900 border border-neutral-800 rounded-2xl px-6 py-10 max-w-sm mx-auto text-center">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-amber-500/10 flex items-center justify-center">
+                <i className="fa-solid fa-mobile-screen text-2xl text-amber-400"></i>
+              </div>
+              <h2 className="text-xl font-bold text-white mb-2">
+                Desktop Only
               </h2>
-              <p
-                className={`text-pong-dark-secondary ${fontSizes.bodyFontSize}`}
-              >
+              <p className="text-neutral-400 text-sm">
                 Game modes are only available on desktop or tablet devices.
-                <br />
                 Please use a larger screen to play.
               </p>
             </div>

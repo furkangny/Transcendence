@@ -15,7 +15,7 @@ export async function googleLoginHandler(request, reply) {
         clearSessionCookies(reply);
         const { code } = request.query;
         if (!code)
-            return reply.redirect(process.env.FRONT_END_URL);
+            return reply.redirect(`${process.env.FRONT_END_URL}/login`);
         const tokens = await fetch('https://oauth2.googleapis.com/token', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -32,7 +32,7 @@ export async function googleLoginHandler(request, reply) {
         if (!tokens.ok) {
             const errorText = await tokens.text();
             console.log('Google tokens error: ', errorText);
-            return reply.redirect(process.env.FRONT_END_URL);
+            return reply.redirect(`${process.env.FRONT_END_URL}/login`);
         }
 
         const { access_token, refresh_token } = await tokens.json();
@@ -98,9 +98,9 @@ export async function googleLoginHandler(request, reply) {
             }, 'profile.user.created');
         }
 
-        return reply.redirect(process.env.FRONT_END_URL);
+        return reply.redirect(`${process.env.FRONT_END_URL}/salon`);
     } catch (error) {
         console.log(error);
-        return reply.redirect(process.env.FRONT_END_URL);
+        return reply.redirect(`${process.env.FRONT_END_URL}/login`);
     }
 }

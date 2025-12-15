@@ -110,6 +110,7 @@ export function handleSignUp() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(userInfos),
+        credentials: "include",
       });
 
       const result = await response.json();

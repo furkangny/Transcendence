@@ -22,22 +22,15 @@ export function LeaderboardPreview(props: { user: UserProfile }) {
 
   return (
     <div className="relative h-full min-h-[400px] group">
-      {/* Arka Plan Efekti */}
-      <div className="absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-yellow-500/10 rounded-3xl blur-xl opacity-50"></div>
-      
       {/* Ana Kart */}
-      <div className="relative h-full p-6 rounded-3xl bg-gradient-to-br from-black/90 via-neutral-900/80 to-black/90 border border-amber-500/20 backdrop-blur-2xl overflow-hidden">
+      <div className="relative h-full p-6 rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden">
         {/* Üst Dekoratif Çizgi */}
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-500"></div>
-        
-        {/* Köşe Efektleri */}
-        <div className="absolute -top-10 -right-10 w-32 h-32 bg-amber-500/20 rounded-full blur-2xl"></div>
-        <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-yellow-500/20 rounded-full blur-2xl"></div>
+        <div className="absolute top-0 left-0 w-full h-1 bg-amber-500"></div>
 
         {/* Başlık */}
         <div className="relative flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center shadow-lg shadow-amber-500/30">
+            <div className="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center">
               <i className="fa-solid fa-trophy text-black"></i>
             </div>
             <h2 className="text-white font-bold text-xl">Top Players</h2>
@@ -70,7 +63,7 @@ export function LeaderboardPreview(props: { user: UserProfile }) {
             {/* Buton */}
             <a 
               href="/chamber" 
-              className="flex items-center gap-2 px-4 py-2.5 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-400 hover:to-yellow-400 text-black font-semibold rounded-xl shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 transition-all duration-300 transform hover:scale-[1.02]"
+              className="flex items-center gap-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-xl transition-all duration-300 transform hover:scale-[1.02]"
               data-link
             >
               <span>View All</span>

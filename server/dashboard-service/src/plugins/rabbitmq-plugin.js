@@ -1,9 +1,9 @@
 import fp from 'fastify-plugin'
-import RabbitMQClient from '../libs/RabbitMQClient.js'
+import EventBusClient from '../libs/EventBusClient.js'
 
 
 async function rabbitMQPlugin(fastify, options) {
-    const rabbit = new RabbitMQClient(process.env.RABBITMQ_DASHBOARD_QUEUE);
+    const rabbit = new EventBusClient(process.env.RABBITMQ_DASHBOARD_QUEUE);
     try {       
         await rabbit.connect();
         console.log("RabbitMQ connected...");

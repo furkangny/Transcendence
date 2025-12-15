@@ -6,18 +6,13 @@ export function RecentActivityFeed(): HTMLDivElement {
   wrapper.className =
     "relative h-full min-h-[400px] group";
 
-  // Arka plan efekti
-  const bgEffect = document.createElement("div");
-  bgEffect.className = "absolute inset-0 bg-gradient-to-br from-amber-500/10 via-transparent to-yellow-500/10 rounded-3xl blur-xl opacity-50";
-  wrapper.appendChild(bgEffect);
-
   // Ana container
   const mainContainer = document.createElement("div");
-  mainContainer.className = "relative h-full p-6 rounded-3xl bg-gradient-to-br from-black/90 via-neutral-900/80 to-black/90 border border-amber-500/20 backdrop-blur-2xl overflow-hidden";
+  mainContainer.className = "relative h-full p-6 rounded-2xl bg-neutral-900 border border-neutral-800 overflow-hidden";
   
   // Üst dekoratif çizgi
   const topLine = document.createElement("div");
-  topLine.className = "absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-400 via-yellow-500 to-amber-500";
+  topLine.className = "absolute top-0 left-0 w-full h-1 bg-amber-500";
   mainContainer.appendChild(topLine);
 
   // Başlık container
@@ -28,7 +23,7 @@ export function RecentActivityFeed(): HTMLDivElement {
   titleLeft.className = "flex items-center gap-3";
 
   const iconWrapper = document.createElement("div");
-  iconWrapper.className = "w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center shadow-lg";
+  iconWrapper.className = "w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center";
   
   const icon = document.createElement("i");
   icon.className = "fa-solid fa-clock-rotate-left text-black";
@@ -47,7 +42,7 @@ export function RecentActivityFeed(): HTMLDivElement {
   liveBadge.className = "flex items-center gap-2 px-3 py-1.5 bg-emerald-500/20 rounded-full border border-emerald-500/30";
   
   const liveDot = document.createElement("span");
-  liveDot.className = "w-2 h-2 bg-emerald-400 rounded-full animate-pulse";
+  liveDot.className = "w-2 h-2 bg-emerald-400 rounded-full";
   
   const liveText = document.createElement("span");
   liveText.className = "text-emerald-400 text-xs font-semibold uppercase tracking-wider";

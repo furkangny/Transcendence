@@ -11,7 +11,7 @@ function htmlTemplateWithCode(otpCode) {
       </div>
       <p>This code expires in 5 minutes.</p>
       <p>If you didn't request this, you can ignore this email.</p>
-      <p style="color: #888;">&copy; 2025 BEE Club</p>
+      <p style="color: #888;">&copy; 2025 BEEPONG</p>
     </div>
   `;
 }

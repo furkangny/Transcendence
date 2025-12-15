@@ -125,13 +125,10 @@ export function SignUpForm() {
     <div className="w-full max-w-md mx-auto animate-fadeInUp">
       {/* Ana Form Kartı */}
       <div className="relative group">
-        {/* Dış Glow Efekti */}
-        <div className="absolute -inset-1 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-600 rounded-3xl blur-lg opacity-25 group-hover:opacity-40 transition-opacity duration-500"></div>
-        
         {/* Form Container */}
-        <form id="signup-form" className="relative bg-black/90 backdrop-blur-2xl rounded-3xl border border-amber-500/20 p-8 space-y-5">
+        <form id="signup-form" className="relative bg-neutral-900 rounded-2xl border border-neutral-800 p-8 space-y-5">
           {/* Üst Dekoratif Çizgi */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-500 rounded-b-full"></div>
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-amber-500 rounded-b-full"></div>
 
           {/* Input Alanları */}
           <div className="space-y-4 pt-4">
@@ -258,7 +255,7 @@ export function SignUpForm() {
           <button
             type="submit"
             id="submit-btn"
-            className="relative w-full py-4 px-6 bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 hover:from-amber-400 hover:via-yellow-400 hover:to-amber-400 text-black font-bold text-lg rounded-xl shadow-[0_4px_20px_rgba(251,191,36,0.4)] hover:shadow-[0_6px_30px_rgba(251,191,36,0.5)] transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] overflow-hidden group/btn"
+            className="relative w-full py-4 px-6 bg-amber-500 hover:bg-amber-400 text-black font-bold text-lg rounded-xl transition-all duration-300 transform hover:scale-[1.02] active:scale-[0.98] overflow-hidden group/btn"
             aria-busy="false"
           >
             <span

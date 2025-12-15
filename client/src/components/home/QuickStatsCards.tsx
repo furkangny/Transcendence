@@ -38,14 +38,11 @@ export function QuickStatsCards(props: { user: UserProfile }) {
 
   return (
     <div className="relative h-full">
-      {/* Arka Plan Efekti */}
-      <div className="absolute inset-0 bg-gradient-to-b from-amber-500/10 via-transparent to-yellow-500/10 rounded-3xl blur-xl opacity-50"></div>
-      
       {/* Ana Kart */}
-      <div className="relative h-full p-5 rounded-3xl bg-gradient-to-br from-black/90 via-neutral-900/80 to-black/90 border border-amber-500/20 backdrop-blur-2xl">
+      <div className="relative h-full p-5 rounded-2xl bg-neutral-900 border border-neutral-800">
         {/* Başlık */}
         <div className="flex items-center gap-2 mb-5">
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center">
+          <div className="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center">
             <i className="fa-solid fa-chart-simple text-black text-sm"></i>
           </div>
           <h3 className="text-white font-bold text-lg">Your Stats</h3>

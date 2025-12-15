@@ -21,12 +21,15 @@ export function LocalGame() {
     document.documentElement.clientHeight || 0,
     window.innerHeight || 0
   );
-  const canvasWidth = Math.min(1000, vw * 0.95);
-  const canvasHeight = Math.min(600, vh * 0.7);
+  const canvasWidth = Math.min(1000, vw * 0.9);
+  const canvasHeight = Math.min(500, vh * 0.55);
+
+  // Prevent page scroll during game
+  document.body.style.overflow = "hidden";
 
   // Create a container element for the game
   const container = document.createElement("div");
-  container.className = styles.gameContainer;
+  container.className = `${styles.gameContainer} overflow-hidden`;
   container.id = "game-screen";
   container.dataset.theme = localStorage.getItem("gameTheme") || "dark";
 
@@ -123,6 +126,7 @@ export function LocalGame() {
   const exit = container.querySelector("#exit") as HTMLElement;
 
   exit.addEventListener("click", () => {
+    document.body.style.overflow = ""; // Restore scroll when leaving
     navigateTo("/arena");
   });
 
@@ -147,6 +151,10 @@ export function LocalGame() {
     socketLocal = new WebSocket(`wss://${window.location.host}/game/ws`);
 
     window.addEventListener("keydown", (event: KeyboardEvent) => {
+      // Prevent default scrolling for arrow keys
+      if (["ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight", " "].includes(event.key)) {
+        event.preventDefault();
+      }
       keys[event.key] = true;
     });
 
@@ -223,7 +231,6 @@ class FlowFieldLocal {
   private gameState: GameStateLocal;
   private canvasWidth: number;
   private canvasHeight: number;
-  private ballPulse: number = 0;
 
   private domElements: {
     rightPlayerScoreLocal: HTMLElement;
@@ -320,27 +327,12 @@ class FlowFieldLocal {
       0,
       Math.PI * 2
     );
-    this.ctx.shadowColor = isDark ? "#FFD700" : "#00B894";
-    this.ctx.shadowBlur = 24;
     this.ctx.fillStyle = isDark ? "#FFD700" : "#00B894";
     this.ctx.fill();
     this.ctx.lineWidth = 3;
     this.ctx.strokeStyle = isDark ? "#fff" : "#23272f";
     this.ctx.stroke();
     this.ctx.restore();
-    this.ballPulse += 0.08;
-    this.ctx.globalAlpha = 0.25 + 0.15 * Math.sin(this.ballPulse);
-    this.ctx.beginPath();
-    this.ctx.arc(
-      this.gameState.ballX,
-      this.gameState.ballY,
-      13 + 10 + 5 * Math.abs(Math.sin(this.ballPulse)),
-      0,
-      Math.PI * 2
-    );
-    this.ctx.fillStyle = isDark ? "#FFD700" : "#00B894";
-    this.ctx.fill();
-    this.ctx.globalAlpha = 1;
 
     // names
     // this.ctx.save();

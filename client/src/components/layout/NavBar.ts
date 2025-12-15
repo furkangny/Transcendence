@@ -3,251 +3,252 @@ import { styles } from "@/styles/styles";
 export function NavBar() {
   // === NAV ITEMS ===
   const navItems = [
-    { path: "/salon", icon: "fa-house", label: "salon" },
-    { path: "/arena", icon: "fa-table-tennis-paddle-ball", label: "arena" },
-    { path: "/chamber", icon: "fa-ranking-star", label: "chamber" },
-    { path: "/lounge", icon: "fa-message", label: "lounge" },
-    { path: "/members", icon: "fa-user-group", label: "members" },
+    { path: "/salon", icon: "fa-house", label: "Salon" },
+    { path: "/arena", icon: "fa-table-tennis-paddle-ball", label: "Arena" },
+    { path: "/chamber", icon: "fa-ranking-star", label: "Chamber" },
+    { path: "/lounge", icon: "fa-message", label: "Lounge" },
+    { path: "/members", icon: "fa-user-group", label: "Members" },
   ];
 
-  // === HOVER ZONE ===
-  let hoverZone = document.getElementById(
-    "hover-zone"
-  ) as HTMLDivElement | null;
-  if (!hoverZone) {
-    hoverZone = document.createElement("div");
-    hoverZone.id = "hover-zone";
-    hoverZone.className = "hidden md:block fixed top-0 left-0 h-full w-4 z-40";
-    document.body.appendChild(hoverZone);
-  }
+  const settingsItems = [
+    { label: "Security", path: "/security", icon: "fa-lock" },
+    { label: "Blocked", path: "/muted_players", icon: "fa-user-slash" },
+    { label: "Delete Account", path: "/wipe_account", icon: "fa-trash" },
+  ];
 
-  // === TOGGLE BUTTON ===
-  let toggleBtn = document.getElementById(
-    "nav-toggle-btn"
-  ) as HTMLButtonElement | null;
-  if (!toggleBtn) {
-    toggleBtn = document.createElement("button");
-    toggleBtn.id = "nav-toggle-btn";
-    toggleBtn.className = styles.navToggleBtn;
-    toggleBtn.setAttribute("aria-label", "Toggle navigation");
-    toggleBtn.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-    document.body.appendChild(toggleBtn);
-  }
+  // Remove old elements
+  document.getElementById("hover-zone")?.remove();
+  document.getElementById("nav-toggle-btn")?.remove();
+  document.getElementById("nav-backdrop")?.remove();
+  document.getElementById("navbar")?.remove();
 
-  // === BACKDROP ===
-  let backdrop = document.getElementById(
-    "nav-backdrop"
-  ) as HTMLDivElement | null;
-  if (!backdrop) {
-    backdrop = document.createElement("div");
-    backdrop.id = "nav-backdrop";
-    backdrop.className = styles.backdrop;
-    document.body.appendChild(backdrop);
-  }
-
-  // === NAV CONTAINER ===
-  const oldNav = document.getElementById("navbar");
-  if (oldNav) oldNav.remove();
-
+  // === MAIN NAV CONTAINER ===
   const nav = document.createElement("nav");
   nav.id = "navbar";
-  nav.className = styles.navBarContainer;
+  nav.className = `
+    fixed top-0 left-0 right-0 z-50
+    bg-black
+    border-b border-neutral-800
+  `;
 
-  // === UL NAV ITEMS ===
-  const ul = document.createElement("ul");
-  ul.className =
-    "flex flex-col gap-6 md:gap-8 md:items-center w-full mt-12 md:mt-0";
+  // Inner container
+  const container = document.createElement("div");
+  container.className = "max-w-7xl mx-auto px-4 md:px-6 lg:px-8";
+
+  // Flex wrapper
+  const wrapper = document.createElement("div");
+  wrapper.className = "flex items-center justify-between h-16";
+
+  // === LOGO ===
+  const logo = document.createElement("a");
+  logo.href = "/salon";
+  logo.setAttribute("data-link", "true");
+  logo.className = "flex items-center gap-2 text-white font-bold text-lg";
+  logo.innerHTML = `
+    <span class="text-amber-400 font-black">BEE</span>
+    <span class="text-white">PONG</span>
+  `;
+
+  // === DESKTOP NAV LINKS ===
+  const desktopNav = document.createElement("div");
+  desktopNav.className = "hidden md:flex items-center gap-1";
 
   navItems.forEach(({ path, icon, label }) => {
     const isActive = location.pathname === path;
-    const li = document.createElement("li");
-    li.className = "w-full";
-
-    const a = document.createElement("a");
-    a.href = path;
-    a.setAttribute("data-link", "true");
-    a.className = `
-      ${styles.navLink}
-      ${
-        isActive
-          ? "bg-gradient-to-r from-pong-gold/30 to-amber-500/20 text-white shadow-[0_0_15px_rgba(251,191,36,0.3)]"
-          : "text-pong-dark-primary"
-      }
-    `;
-    a.innerHTML = `
-      <i class="fa-solid ${icon} text-xl md:text-2xl transition-transform duration-300 group-hover:scale-110
-        ${
-          isActive
-            ? "text-pong-gold drop-shadow-[0_0_8px_rgba(251,191,36,0.5)]"
-            : "text-pong-dark-primary group-hover:text-white md:group-hover:text-pong-gold"
-        }
-      "></i>
-      <span class="
-        ${
-          isActive
-            ? "text-white font-semibold"
-            : "text-pong-dark-primary group-hover:text-white md:group-hover:text-pong-gold"
-        }
-        transition-colors duration-300
-      ">${label}</span>
-    `;
-
-    li.appendChild(a);
-    ul.appendChild(li);
-
-    a.addEventListener("click", () => {
-      if (window.innerWidth < 768) closeMenu();
-    });
-  });
-
-  // === SETTINGS DROPDOWN ===
-  const settingsLi = document.createElement("li");
-  settingsLi.className = "w-full relative";
-
-  const settingsBtn = document.createElement("button");
-  settingsBtn.type = "button";
-  settingsBtn.setAttribute("aria-haspopup", "true");
-  settingsBtn.setAttribute("aria-expanded", "false");
-  settingsBtn.className = styles.navSettingsBtn;
-  settingsBtn.innerHTML = `
-    <i class="fa-solid fa-gear text-xl md:text-2xl transition-transform duration-300 group-hover:scale-110"></i>
-    <span class="transition-colors duration-300">mechanics</span>
-    <i class="fa-solid fa-chevron-down ml-auto text-sm opacity-70 md:hidden transition-transform duration-200" id="settings-arrow"></i>
-  `;
-
-  // Settings items
-  const settingsItems = [
-    { label: "Access Keys", path: "/security", icon: "fa-lock" },
-    { label: "Muted Players", path: "/muted_players", icon: "fa-user-slash" },
-    { label: "Wipe Account", path: "/wipe_account", icon: "fa-trash" },
-  ];
-
-  // === Dropdown menu ===
-  const settingsDropdown = document.createElement("ul");
-  settingsDropdown.className = styles.navSettingsDropdown;
-
-  settingsItems.forEach(({ label, path, icon }) => {
-    const item = document.createElement("li");
     const link = document.createElement("a");
     link.href = path;
     link.setAttribute("data-link", "true");
     link.className = `
-      flex items-center gap-3 px-4 py-2 rounded-xl 
-      text-pong-dark-primary hover:bg-gradient-to-r hover:from-pong-gold/20 hover:to-amber-500/10 hover:text-white transition
-      focus:outline-none focus:bg-pong-gold/30
+      flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
+      ${isActive 
+        ? "bg-amber-500/20 text-amber-400" 
+        : "text-neutral-400 hover:text-white hover:bg-white/5"}
     `;
     link.innerHTML = `
-      <i class="fa-solid ${icon} w-5 text-sm text-pong-gold"></i>
+      <i class="fa-solid ${icon}"></i>
       <span>${label}</span>
     `;
-    item.appendChild(link);
-    settingsDropdown.appendChild(item);
-
-    link.addEventListener("click", () => {
-      settingsDropdown.classList.add("hidden");
-      settingsBtn.setAttribute("aria-expanded", "false");
-      document.getElementById("settings-arrow")?.classList.remove("rotate-180");
-      if (window.innerWidth < 768) closeMenu();
-    });
+    desktopNav.appendChild(link);
   });
 
-  // === Dropdown logic ===
-  let dropdownOpen = false;
-  const arrowIcon = settingsBtn.querySelector("#settings-arrow");
+  // === DESKTOP SETTINGS DROPDOWN ===
+  const settingsWrapper = document.createElement("div");
+  settingsWrapper.className = "hidden md:block relative ml-2";
 
-  function openDropdown() {
-    settingsDropdown.classList.remove("hidden");
-    settingsBtn.setAttribute("aria-expanded", "true");
-    arrowIcon?.classList.add("rotate-180");
-    dropdownOpen = true;
-  }
-  function closeDropdown() {
-    settingsDropdown.classList.add("hidden");
-    settingsBtn.setAttribute("aria-expanded", "false");
-    arrowIcon?.classList.remove("rotate-180");
-    dropdownOpen = false;
-  }
-
-  settingsBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    dropdownOpen ? closeDropdown() : openDropdown();
-  });
-
-  // Close dropdown on outside click
-  document.addEventListener("mousedown", (e) => {
-    if (
-      dropdownOpen &&
-      !settingsDropdown.contains(e.target as Node) &&
-      !settingsBtn.contains(e.target as Node)
-    ) {
-      closeDropdown();
-    }
-  });
-
-  settingsLi.appendChild(settingsBtn);
-  settingsLi.appendChild(settingsDropdown);
-  ul.appendChild(settingsLi);
-
-  // Keyboard accessibility
-  settingsBtn.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeDropdown();
-    if (e.key === "ArrowDown" && !dropdownOpen) openDropdown();
-  });
-
-  // === EXIT LINK ===
-  const exitLi = document.createElement("li");
-  exitLi.className = "w-full";
-  const exitLink = document.createElement("a");
-  exitLink.href = "/checkout";
-  exitLink.setAttribute("data-link", "true");
-  exitLink.className = styles.navLink;
-  exitLink.innerHTML = `
-    <i class="fa-solid fa-arrow-right-from-bracket text-xl md:text-2xl transition-transform duration-300 group-hover:scale-110"></i>
-    <span class="transition-colors duration-300">checkout</span>
+  const settingsBtn = document.createElement("button");
+  settingsBtn.className = `
+    flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300
+    text-neutral-400 hover:text-white hover:bg-white/5
   `;
-  exitLi.appendChild(exitLink);
-  ul.appendChild(exitLi);
+  settingsBtn.innerHTML = `
+    <i class="fa-solid fa-gear"></i>
+    <span>Settings</span>
+    <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="desktop-settings-arrow"></i>
+  `;
 
-  nav.appendChild(ul);
+  const settingsDropdown = document.createElement("div");
+  settingsDropdown.className = `
+    absolute right-0 top-full mt-2 w-48 py-2
+    bg-neutral-900 rounded-xl border border-neutral-800
+    hidden z-50
+  `;
 
-  // === MENU LOGIC ===
-  let menuOpen = false;
+  settingsItems.forEach(({ label, path, icon }) => {
+    const link = document.createElement("a");
+    link.href = path;
+    link.setAttribute("data-link", "true");
+    link.className = `
+      flex items-center gap-3 px-4 py-2.5 text-sm
+      text-neutral-400 hover:text-white hover:bg-amber-500/10 transition-all
+    `;
+    link.innerHTML = `
+      <i class="fa-solid ${icon} w-4 text-amber-500/70"></i>
+      <span>${label}</span>
+    `;
+    settingsDropdown.appendChild(link);
+  });
 
-  const openMenu = () => {
-    nav.classList.remove("-translate-x-full");
-    backdrop.classList.add("opacity-100", "pointer-events-auto");
-    menuOpen = true;
-    toggleBtn!.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
-  };
+  // Logout link in dropdown
+  const logoutLink = document.createElement("a");
+  logoutLink.href = "/checkout";
+  logoutLink.setAttribute("data-link", "true");
+  logoutLink.className = `
+    flex items-center gap-3 px-4 py-2.5 text-sm
+    text-neutral-400 hover:text-red-400 hover:bg-red-500/10 transition-all
+    border-t border-neutral-800 mt-2 pt-2
+  `;
+  logoutLink.innerHTML = `
+    <i class="fa-solid fa-arrow-right-from-bracket w-4 text-red-500/70"></i>
+    <span>Logout</span>
+  `;
+  settingsDropdown.appendChild(logoutLink);
 
-  const closeMenu = () => {
-    nav.classList.add("-translate-x-full");
-    backdrop.classList.remove("opacity-100", "pointer-events-auto");
-    menuOpen = false;
-    toggleBtn!.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-    closeDropdown();
-  };
+  settingsWrapper.appendChild(settingsBtn);
+  settingsWrapper.appendChild(settingsDropdown);
 
-  toggleBtn.onclick = () => {
-    menuOpen ? closeMenu() : openMenu();
-  };
+  // Settings dropdown toggle
+  let settingsOpen = false;
+  settingsBtn.addEventListener("click", () => {
+    settingsOpen = !settingsOpen;
+    settingsDropdown.classList.toggle("hidden");
+    document.getElementById("desktop-settings-arrow")?.classList.toggle("rotate-180");
+  });
 
-  backdrop.onclick = closeMenu;
-
-  const handleResize = () => {
-    if (window.innerWidth >= 768) {
-      nav.classList.remove("-translate-x-full");
-      backdrop.classList.remove("opacity-100", "pointer-events-auto");
-      menuOpen = false;
-      toggleBtn!.innerHTML = `<i class="fa-solid fa-bars"></i>`;
-      closeDropdown();
-    } else if (!menuOpen) {
-      nav.classList.add("-translate-x-full");
-      closeDropdown();
+  document.addEventListener("click", (e) => {
+    if (settingsOpen && !settingsWrapper.contains(e.target as Node)) {
+      settingsOpen = false;
+      settingsDropdown.classList.add("hidden");
+      document.getElementById("desktop-settings-arrow")?.classList.remove("rotate-180");
     }
-  };
-  window.addEventListener("resize", handleResize);
-  handleResize();
+  });
+
+  // === MOBILE MENU BUTTON ===
+  const mobileMenuBtn = document.createElement("button");
+  mobileMenuBtn.className = "md:hidden p-2 text-neutral-400 hover:text-white transition-colors";
+  mobileMenuBtn.innerHTML = `<i class="fa-solid fa-bars text-xl" id="mobile-menu-icon"></i>`;
+
+  // === MOBILE MENU ===
+  const mobileMenu = document.createElement("div");
+  mobileMenu.id = "mobile-menu";
+  mobileMenu.className = `
+    md:hidden fixed inset-x-0 top-16 bottom-0 z-40
+    bg-black
+    transform translate-y-full transition-transform duration-300
+  `;
+
+  const mobileMenuInner = document.createElement("div");
+  mobileMenuInner.className = "p-4 space-y-2";
+
+  // Mobile nav items
+  navItems.forEach(({ path, icon, label }) => {
+    const isActive = location.pathname === path;
+    const link = document.createElement("a");
+    link.href = path;
+    link.setAttribute("data-link", "true");
+    link.className = `
+      flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all
+      ${isActive 
+        ? "bg-amber-500/20 text-amber-400" 
+        : "text-neutral-300 hover:bg-white/5"}
+    `;
+    link.innerHTML = `
+      <i class="fa-solid ${icon} w-5"></i>
+      <span>${label}</span>
+    `;
+    link.addEventListener("click", closeMobileMenu);
+    mobileMenuInner.appendChild(link);
+  });
+
+  // Mobile divider
+  const divider = document.createElement("div");
+  divider.className = "border-t border-neutral-800 my-4";
+  mobileMenuInner.appendChild(divider);
+
+  // Mobile settings items
+  settingsItems.forEach(({ label, path, icon }) => {
+    const link = document.createElement("a");
+    link.href = path;
+    link.setAttribute("data-link", "true");
+    link.className = `
+      flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all
+      text-neutral-400 hover:bg-white/5
+    `;
+    link.innerHTML = `
+      <i class="fa-solid ${icon} w-5 text-amber-500/70"></i>
+      <span>${label}</span>
+    `;
+    link.addEventListener("click", closeMobileMenu);
+    mobileMenuInner.appendChild(link);
+  });
+
+  // Mobile logout
+  const mobileLogout = document.createElement("a");
+  mobileLogout.href = "/checkout";
+  mobileLogout.setAttribute("data-link", "true");
+  mobileLogout.className = `
+    flex items-center gap-3 px-4 py-3 rounded-xl text-base font-medium transition-all
+    text-red-400 hover:bg-red-500/10 mt-4
+  `;
+  mobileLogout.innerHTML = `
+    <i class="fa-solid fa-arrow-right-from-bracket w-5"></i>
+    <span>Logout</span>
+  `;
+  mobileLogout.addEventListener("click", closeMobileMenu);
+  mobileMenuInner.appendChild(mobileLogout);
+
+  mobileMenu.appendChild(mobileMenuInner);
+
+  // Mobile menu toggle
+  let mobileMenuOpen = false;
+
+  function openMobileMenu() {
+    mobileMenuOpen = true;
+    mobileMenu.classList.remove("translate-y-full");
+    mobileMenu.classList.add("translate-y-0");
+    document.getElementById("mobile-menu-icon")?.classList.replace("fa-bars", "fa-xmark");
+  }
+
+  function closeMobileMenu() {
+    mobileMenuOpen = false;
+    mobileMenu.classList.add("translate-y-full");
+    mobileMenu.classList.remove("translate-y-0");
+    document.getElementById("mobile-menu-icon")?.classList.replace("fa-xmark", "fa-bars");
+  }
+
+  mobileMenuBtn.addEventListener("click", () => {
+    mobileMenuOpen ? closeMobileMenu() : openMobileMenu();
+  });
+
+  // === ASSEMBLE ===
+  wrapper.appendChild(logo);
+  wrapper.appendChild(desktopNav);
+  wrapper.appendChild(settingsWrapper);
+  wrapper.appendChild(mobileMenuBtn);
+  container.appendChild(wrapper);
+  nav.appendChild(container);
+
+  // Append mobile menu to body
+  document.body.appendChild(mobileMenu);
 
   return nav;
 }

@@ -33,7 +33,7 @@ export function Profile() {
         <main className={styles.pageContent}>
           <SecondaryHeader
             title="Member Profile"
-            subtitle="Your identity, matches & achievements in the BEE Club."
+            subtitle="Your identity, matches & achievements in the BEEPONG."
           />
 
           <div className={containerClassName}>
