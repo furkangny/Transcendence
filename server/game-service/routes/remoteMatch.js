@@ -1,3 +1,5 @@
+import WebSocket from 'ws';
+
 function gameLogic(gameState) {
     // Don't process game logic if countdown is active
     if (gameState.countdownActive) {
@@ -86,16 +88,6 @@ function gameLogic(gameState) {
         gameState.hitCount = 0;
         gameState.flagX = Math.random() < 0.5;  // Rastgele yön
         gameState.flagY = Math.random() < 0.5;  // Rastgele yön
-
-        // Start countdown after scoring (but not if game is over)
-        if (
-            gameState.leftPlayerScore < gameState.rounds &&
-            gameState.rightPlayerScore < gameState.rounds
-        ) {
-            gameState.countdownActive = true;
-            gameState.countdownTime = 3;
-            gameState.needsCountdown = true; // Flag to trigger countdown in main handler
-        }
     }
     return gameState;
 }
