@@ -70,7 +70,7 @@ export async function setup2FA(mode: "app" | "email") {
         }
         if (!/^\d{6}$/.test(otpInput.value)) {
           displayToast(
-            "Enter match-point digits only — no letters or symbols allowed.",
+            "Sadece rakam gir  harf veya sembol kullanma.",
             "error"
           );
           otpInput.focus();
@@ -78,15 +78,15 @@ export async function setup2FA(mode: "app" | "email") {
         }
         verify2FASetup(otpInput.value, mode, (isPrimary) => {
           verifySection.classList.add("hidden");
-          displayToast("Security serve! Your 2FA is now active.", "success");
+      displayToast("Güvenlik servisi! 2FA artık aktif.", "success");
           setupBtn.classList.add("hidden");
           setPrimaryBtn.classList.remove("hidden");
           toggleEnableBtn.classList.remove("hidden");
-          toggleEnableBtn.textContent = "Disable";
-          statusLabel.textContent = "Enabled";
+      toggleEnableBtn.textContent = "Devre Dışı Bırak";
+      statusLabel.textContent = "Aktif";
           statusLabel.className =
             "ml-2 px-2 py-1 text-xs font-bold rounded-full bg-green-100 text-green-700";
-          primaryLabel.textContent = "Primary";
+      primaryLabel.textContent = "Birincil";
           primaryLabel.className =
             "ml-2 px-2 py-1 text-xs font-bold rounded-full bg-blue-200 text-blue-700";
           if (!isPrimary) primaryLabel.classList.add("hidden");
@@ -96,7 +96,7 @@ export async function setup2FA(mode: "app" | "email") {
       });
     } else if (response.status === 429) {
       verifySection.classList.add("hidden");
-      displayToast("Easy, champ! Let’s give it a second to catch up.", "error");
+    displayToast("Sakin ol şampiyon! Biraz bekleyip tekrar dene.", "error");
     } else {
       verifySection.classList.add("hidden");
       displayToast(Setup2FaRes[data.code] || "Failed to enable 2FA.", "error");

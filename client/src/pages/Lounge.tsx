@@ -15,17 +15,17 @@ export function Lounge() {
       <div className="w-full relative">
         <main className={styles.pageContent}>
           <SecondaryHeader
-            title="The Lounge"
-            subtitle="Where conversations echo and rivalries spark — connect with fellow club champions."
+            title="Sohbet Salonu"
+            subtitle="Konuşmaların yankılandığı, rekabetin alevlendiği yer — kulüpteki diğer oyuncularla bağlantı kur."
           />
 
           <div id="friends-container" className={styles.membersListStyle}>
             <h2 className="text-pong-dark-primary text-2xl md:text-3xl font-bold tracking-tight flex items-center gap-3 mb-6">
               <span className="inline-block w-1.5 h-8 bg-pong-dark-accent rounded-sm"></span>
-              Ongoing Chats
+              Aktif Sohbetler
             </h2>
             <p className="text-sm text-pong-dark-highlight/80 -mt-4 mb-6 pl-6">
-              Dive back into your latest conversations with clubmates.
+              Kulüp arkadaşlarınla son konuşmalarına kaldığın yerden devam et.
             </p>
             <ChatList />
           </div>

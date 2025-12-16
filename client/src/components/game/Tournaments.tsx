@@ -113,37 +113,37 @@ export function Tournaments() {
       </div>
     </div>
     <div id="gameTab" class="${styles.gameTab} game-tab p-6 rounded-2xl border transition-all duration-300 shadow-xl space-y-4 hidden">
-      <h2 id="result" class="text-3xl font-bold tracking-tight text-center">Victory Board</h2>
+      <h2 id="result" class="text-3xl font-bold tracking-tight text-center">Zafer Panosu</h2>
       <div class="flex flex-col gap-3 text-base md:text-lg text-center font-medium">
-        <h3 id="currentMatch" class="py-2 px-4 rounded-lg shadow-md">Current Challenge</h3>
-        <h3 id="prevMatch" class="py-2 px-4 rounded-lg shadow-md hidden">Previous Duel</h3>
-        <h3 id="nextMatch" class="py-2 px-4 rounded-lg shadow-md hidden">Next Face-off</h3>
+        <h3 id="currentMatch" class="py-2 px-4 rounded-lg shadow-md">Şu Anki Eşleşme</h3>
+        <h3 id="prevMatch" class="py-2 px-4 rounded-lg shadow-md hidden">Önceki Düello</h3>
+        <h3 id="nextMatch" class="py-2 px-4 rounded-lg shadow-md hidden">Sıradaki Kapışma</h3>
       </div>
       <div class="flex justify-center gap-4 mt-6">
-        <button id="restart" class="hidden game-btn font-semibold py-3 px-8 rounded-xl text-md md:text-lg shadow-md tracking-wide transition-all duration-300 text-white bg-pong-sport-accent hover:bg-pong-sport-primary dark:bg-pong-dark-secondary dark:hover:bg-pong-dark-accent">Play</button>
-        <button id="start" class="game-btn font-semibold py-3 px-8 rounded-xl text-md md:text-lg shadow-md tracking-wide transition-all duration-300 text-white bg-pong-sport-accent hover:bg-pong-sport-primary dark:bg-pong-dark-accent dark:hover:bg-pong-dark-secondary">Start Game</button>
+        <button id="restart" class="hidden game-btn font-semibold py-3 px-8 rounded-xl text-md md:text-lg shadow-md tracking-wide transition-all duration-300 text-white bg-pong-sport-accent hover:bg-pong-sport-primary dark:bg-pong-dark-secondary dark:hover:bg-pong-dark-accent">Oyna</button>
+        <button id="start" class="game-btn font-semibold py-3 px-8 rounded-xl text-md md:text-lg shadow-md tracking-wide transition-all duration-300 text-white bg-pong-sport-accent hover:bg-pong-sport-primary dark:bg-pong-dark-accent dark:hover:bg-pong-dark-secondary">Oyunu Başlat</button>
       </div>
     </div>
     <div id="resultTab" class="game-tab h-80 w-150 bg-pong-dark-bg border-2 border-pong-dark-secondary rounded-2xl absolute top-1/2 left-1/2 translate-y-[-20%] translate-x-[-50%] z-20 hidden">
       <div class="flex flex-col items-center justify-center h-full px-20 gap-6">
-        <h2 id="resultStat" class="text-2xl font-bold">Champion Crowned!</h2>
-        <button id="restartTournoi" class="game-btn text-white font-bold py-3 px-8 rounded-xl text-lg md:text-xl shadow-md tracking-wide transition-all duration-300">Play Again</button>
+  <h2 id="resultStat" class="text-2xl font-bold">Şampiyon Belli Oldu!</h2>
+  <button id="restartTournoi" class="game-btn text-white font-bold py-3 px-8 rounded-xl text-lg md:text-xl shadow-md tracking-wide transition-all duration-300">Tekrar Oyna</button>
       </div>
     </div>
     <div id="tourTab" class="${styles.gameTab} game-tab">
       <div id="selectTab" class="flex flex-col items-center justify-center h-full gap-6">
-        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Choose Your Arena Size</h2>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Turnuva Boyutunu Seç</h2>
         <div id="tournPlayerNumber" class="flex items-center justify-center gap-6">
-          <button id="eight_players" class="game-btn text-white font-bold py-3 px-8 rounded-xl text-lg md:text-xl shadow-md tracking-wide transition-all duration-300">8 Players</button>
-          <button id="four_Players" class="game-btn text-white font-bold py-3 px-8 rounded-xl text-lg md:text-xl shadow-md tracking-wide transition-all duration-300">4 Players</button>
+          <button id="eight_players" class="game-btn text-white font-bold py-3 px-8 rounded-xl text-lg md:text-xl shadow-md tracking-wide transition-all duration-300">8 Oyuncu</button>
+          <button id="four_Players" class="game-btn text-white font-bold py-3 px-8 rounded-xl text-lg md:text-xl shadow-md tracking-wide transition-all duration-300">4 Oyuncu</button>
         </div>
       </div>
       <div id="inputPlayers" class="h-full hidden">
         <div class="flex flex-col items-center justify-center gap-6">
-          <h2 class="text-3xl md:text-4xl font-bold mb-2 tracking-tight text-center">Enter Challenger Usernames</h2>
+          <h2 class="text-3xl md:text-4xl font-bold mb-2 tracking-tight text-center">Oyuncu Kullanıcı Adlarını Gir</h2>
           <div class="flex items-center justify-center gap-6">
-            <input type="text" id="playerIdField" placeholder="Username" class="focus:outline-none normal-case placeholder:capitalize text-md rounded-lg p-3 placeholder-pong-sport-muted" maxlength="8" />
-            <button id="addPlayerBtn" class="capitalize game-btn text-white font-bold py-3 px-8 rounded-xl text-md shadow-md tracking-wide transition-all duration-300">Add Player</button>
+            <input type="text" id="playerIdField" placeholder="Kullanıcı adı" class="focus:outline-none normal-case placeholder:capitalize text-md rounded-lg p-3 placeholder-pong-sport-muted" maxlength="8" />
+            <button id="addPlayerBtn" class="capitalize game-btn text-white font-bold py-3 px-8 rounded-xl text-md shadow-md tracking-wide transition-all duration-300">Oyuncu Ekle</button>
           </div>
         </div>
       </div>

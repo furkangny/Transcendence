@@ -15,16 +15,16 @@ export function Signup() {
         <div className="text-center mb-10 animate-fadeInUp">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 rounded-full border border-amber-500/30 mb-6">
             <i className="fa-solid fa-user-plus text-amber-400"></i>
-            <span className="text-amber-300 text-sm font-medium">Join Us</span>
+            <span className="text-amber-300 text-sm font-medium">Aramıza Katıl</span>
           </div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
-            Join{" "}
+            Kulübe{" "}
             <span className="text-amber-400">
-              the Club
+              Katıl
             </span>
           </h1>
           <p className="text-neutral-400 text-lg max-w-md mx-auto">
-            Sign your name into club history
+            Adını kulüp tarihine yazdır
           </p>
         </div>
 

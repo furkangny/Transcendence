@@ -25,8 +25,8 @@ export async function Chat(friendId: number) {
     section.appendChild(
       Loader({
         text: friend
-          ? "Preparing your club profile..."
-          : "Unable to load chat. Please try again later.",
+          ? "Kulüp profilin hazırlanıyor..."
+          : "Sohbet yüklenemedi. Lütfen biraz sonra tekrar dene.",
       })
     );
     return section;
@@ -58,8 +58,8 @@ export async function Chat(friendId: number) {
       noFriendsMessage.className = "text-white text-center py-10";
       noFriendsMessage.innerHTML = `				
 			<i class="fa-solid fa-users-slash text-4xl mb-4"></i>
-			<p class="text-lg">You have no friends yet.</p>
-			<p class="text-sm text-gray-400">Add friends to start chatting!</p
+      <p class="text-lg">Henüz hiç arkadaşın yok.</p>
+      <p class="text-sm text-gray-400">Sohbete başlamak için arkadaş ekle!</p
 		`;
       usersSideBar.appendChild(noFriendsMessage);
       return;
@@ -108,7 +108,7 @@ export async function Chat(friendId: number) {
   const loadingDiv = document.createElement("div");
   loadingDiv.className =
     "text-white py-10 text-lg font-semibold absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2";
-  loadingDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i>Loading messages...`;
+  loadingDiv.innerHTML = `<i class="fa-solid fa-spinner fa-spin mr-2"></i>Mesajlar yükleniyor...`;
   main.appendChild(loadingDiv);
 
   mainArea.appendChild(main);
@@ -159,8 +159,8 @@ export async function Chat(friendId: number) {
 	  </span>
 
       <span class="text-xs text-pong-highlight ${isMe ? "mr-2" : "ml-2"} mt-1">
-        ${isMe ? "You" : friend?.username} • ${new Date().toLocaleTimeString(
-          "en-US",
+        ${isMe ? "Sen" : friend?.username}  ${new Date().toLocaleTimeString(
+          "tr-TR",
           {
             hour: "2-digit",
             minute: "2-digit",

@@ -51,7 +51,7 @@ export function handleSignIn() {
     submitBtn.disabled = true;
     submitBtn.setAttribute("aria-busy", "true");
     spinner.classList.remove("hidden");
-    btnLabel.textContent = "entering...";
+  btnLabel.textContent = "Giriş yapılıyor...";
 
     try {
       const response = await fetch("/auth/login", {
@@ -76,7 +76,7 @@ export function handleSignIn() {
       } else if (response.status === 429) {
         setTimeout(() => {
           displayToast(
-            "Easy, champ! Let’s give it a second to catch up.",
+            "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
             "error"
           );
         }, feedbackDelay);
@@ -95,7 +95,7 @@ export function handleSignIn() {
       } else {
         setTimeout(() => {
           const errorMsg =
-            LoginRes[result?.code] || "Error during login. Please try again.";
+            LoginRes[result?.code] || "Giriş sırasında bir hata oluştu. Lütfen tekrar dene.";
           displayToast(errorMsg, "error");
         }, feedbackDelay);
       }

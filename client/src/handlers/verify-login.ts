@@ -82,14 +82,14 @@ export function verifyLogin(mode: string | null) {
       .join("");
 
     if (otpCode.length !== 6) {
-      displayToast("Please enter a valid 6-digit code.", "error");
+  displayToast("Lütfen geçerli bir 6 haneli kod gir.", "error");
       return;
     }
 
     submitBtn.disabled = true;
     submitBtn.setAttribute("aria-busy", "true");
     spinner.classList.remove("hidden");
-    btnLabel.textContent = "verifying...";
+  btnLabel.textContent = "Doğrulanıyor...";
 
     try {
       const response = await fetch(`/2fa/${mode}/verify-login`, {
@@ -113,7 +113,7 @@ export function verifyLogin(mode: string | null) {
         }, feedbackDelay);
       } else if (response.status === 429) {
         displayToast(
-          "Easy, champ! Let’s give it a second to catch up.",
+          "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
           "error"
         );
       } else {
@@ -122,7 +122,7 @@ export function verifyLogin(mode: string | null) {
             (response.status === 401
               ? TokenErrorRes[result?.code]
               : Verify2FaRes[result?.code]) ||
-            "Error during 2fa verification. Please try again.";
+            "Doğrulama sırasında bir hata oluştu. Lütfen tekrar dene.";
           displayToast(errorMsg, "error");
           otpInputs.forEach((input) => {
             input.value = "";

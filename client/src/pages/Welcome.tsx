@@ -12,7 +12,7 @@ export function Welcome() {
       {/* Mascot */}
       <img 
         src={Mascot} 
-        alt="Ping Pong Mascot" 
+        alt="Ping Pong Maskotu" 
         className="w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 absolute top-8 right-8 lg:top-12 lg:right-12 z-20" 
       />
       

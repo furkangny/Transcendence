@@ -55,7 +55,7 @@ export function handleResetPassword() {
     submitBtn.disabled = true;
     submitBtn.setAttribute("aria-busy", "true");
     spinner.classList.remove("hidden");
-    btnLabel.textContent = "updating...";
+  btnLabel.textContent = "Güncelleniyor...";
 
     try {
       const response = await fetch("/auth/update-password", {
@@ -77,7 +77,7 @@ export function handleResetPassword() {
       } else if (response.status === 429) {
         setTimeout(() => {
           displayToast(
-            "Easy, champ! Let’s give it a second to catch up.",
+            "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
             "error"
           );
         }, feedbackDelay);
@@ -85,7 +85,7 @@ export function handleResetPassword() {
         setTimeout(() => {
           const errorMsg =
             UpdatePasswordRes[result?.code] ||
-            "Error during password update. Please try again.";
+            "Şifre güncellenirken bir hata oluştu. Lütfen tekrar dene.";
           displayToast(errorMsg, "error");
         }, feedbackDelay);
       }

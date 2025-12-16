@@ -30,9 +30,9 @@ export function LostPassword() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-2xl mb-4">
                   <i className="fa-solid fa-key text-black text-2xl"></i>
                 </div>
-                <h1 className="text-2xl md:text-3xl font-black text-white mb-2">Lost Your Paddle?</h1>
+                <h1 className="text-2xl md:text-3xl font-black text-white mb-2">Şifreni mi Unuttun?</h1>
                 <p className="text-neutral-400 text-sm">
-                  No worries, champion — enter your email and we'll rally a code your way to reset it.
+                  Sorun değil, şampiyon — e-postanı gir ve sıfırlama kodunu sana gönderelim.
                 </p>
               </div>
 
@@ -46,7 +46,7 @@ export function LostPassword() {
                     type="text"
                     name="email"
                     id="reset-pass-email"
-                    placeholder="Your registered email"
+                    placeholder="Kayıtlı e-posta adresin"
                     autoFocus={true}
                     autoComplete="off"
                     autoCapitalize="none"
@@ -63,7 +63,7 @@ export function LostPassword() {
                   <span id="spinner" className="hidden absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></span>
                   <span className="flex items-center justify-center gap-3">
                     <i className="fa-solid fa-envelope"></i>
-                    <span id="btn-label">Send Me The Code</span>
+                    <span id="btn-label">Kodu Gönder</span>
                   </span>
                 </button>
               </form>
@@ -71,7 +71,7 @@ export function LostPassword() {
               {/* OTP Form */}
               <form id="lost-pass-otp-form" className="space-y-4 hidden">
                 <label className="block text-center text-neutral-300 font-medium mb-2">
-                  Paste the code we just served you
+                  Sana gönderdiğimiz kodu yapıştır
                 </label>
                 <OtpInput id="lost-pass-otp" />
                 <button
@@ -83,7 +83,7 @@ export function LostPassword() {
                   <span id="spinner" className="hidden absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></span>
                   <span className="flex items-center justify-center gap-3">
                     <i className="fa-solid fa-check-double"></i>
-                    <span id="btn-label">Verify Code</span>
+                    <span id="btn-label">Kodu Doğrula</span>
                   </span>
                 </button>
               </form>
@@ -91,13 +91,13 @@ export function LostPassword() {
               {/* Links */}
               <div className="mt-6 pt-6 border-t border-neutral-800">
                 <p className="text-center text-neutral-400">
-                  Remembered your paddle?{" "}
+                  Şifreni hatırladın mı?{" "}
                   <a href="/login" className="text-amber-400 hover:text-amber-300 font-semibold transition-colors" data-link>
-                    Return to club entrance
+                    Giriş sayfasına dön
                   </a>
                 </p>
                 <p className="text-xs text-center text-neutral-500 mt-4 italic">
-                  Didn't receive the serve? Check your spam or promotions lounge.
+                  Kod gelmedi mi? Spam veya promosyon kutunu kontrol et.
                 </p>
               </div>
             </div>

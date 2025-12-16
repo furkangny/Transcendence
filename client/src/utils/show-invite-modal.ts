@@ -34,23 +34,23 @@ export async function showInviteModal(me: UserProfile) {
           rounded-full text-pong-dark-secondary hover:text-white
           hover:bg-pong-dark-accent/30 transition-all duration-300
         "
-        title="Close"
+  title="Kapat"
       >
         <i class="fa-solid fa-xmark text-xl"></i>
       </button>
 
       <h2 class="text-2xl font-bold text-pong-accent mb-2 tracking-wide text-center">
-        Invite a Player
+  Oyuncu Davet Et
       </h2>
       <p class="text-pong-dark-primary text-center mb-6">
-        Select any club member to challenge for an online match
+  Online maça davet etmek için kulüpten bir oyuncu seç
       </p>
 
       <ul id="friends-list-modal" class="
         w-full flex flex-col gap-3 mb-2
         max-h-[420px] overflow-y-auto p-1 custom-scrollbar
       ">
-        <div class="text-center text-pong-dark-secondary py-6">Loading members...</div>
+  <div class="text-center text-pong-dark-secondary py-6">Üyeler yükleniyor...</div>
       </ul>
     </div>
   `;
@@ -69,7 +69,7 @@ export async function showInviteModal(me: UserProfile) {
   if (!list) return;
   if (!allUsers.length) {
     list.innerHTML =
-      '<div class="text-center text-pong-dark-secondary py-6">No members found in the club.</div>';
+  '<div class="text-center text-pong-dark-secondary py-6">Kulüpte hiç üye bulunamadı.</div>';
     return;
   }
 

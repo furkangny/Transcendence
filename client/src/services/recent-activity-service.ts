@@ -132,7 +132,7 @@ export async function startRecentActivityListener(): Promise<void> {
   ws.onopen = () => {
     // Clear the list when connection opens
     if (ul) {
-      ul.innerHTML = `<li class="text-pong-dark-secondary text-center">Loading recent matches...</li>`;
+  ul.innerHTML = `<li class="text-pong-dark-secondary text-center">Son maçlar yükleniyor...</li>`;
     }
   };
 
@@ -146,7 +146,7 @@ export async function startRecentActivityListener(): Promise<void> {
 
     if (incoming.length === 0) {
       if (ul && ul.children.length === 0) {
-        ul.innerHTML = `<li class="text-pong-dark-secondary text-center">No matches have been played in the BEEPONG yet — be the first to serve!</li>`;
+  ul.innerHTML = `<li class="text-pong-dark-secondary text-center">BEEPONG'da henüz hiç maç oynanmadı  ilk servisi sen at!</li>`;
       }
       return;
     }

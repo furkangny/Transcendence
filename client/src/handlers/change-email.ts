@@ -39,7 +39,7 @@ export function handleChangeEmail() {
     if (!emailRegex.test(email)) {
       emailInput.focus();
       displayToast(
-        "That doesn’t look like a valid email. Check the format and try again.",
+  "Bu e-posta geçerli görünmüyor. Formatı kontrol edip tekrar dene.",
         "error"
       );
       return;
@@ -48,7 +48,7 @@ export function handleChangeEmail() {
     btn.disabled = true;
     btn.setAttribute("aria-busy", "true");
     spinner.classList.remove("hidden");
-    btnLabel.textContent = "updating...";
+  btnLabel.textContent = "Güncelleniyor...";
 
     try {
       const response = await fetch("/auth/update-credentials", {
@@ -80,14 +80,15 @@ export function handleChangeEmail() {
       } else if (response.status === 429) {
         setTimeout(() => {
           displayToast(
-            "Easy, champ! Let’s give it a second to catch up.",
+            "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
             "error"
           );
           emailInput.focus();
         }, feedbackDelay);
       } else {
         const errorMsg =
-          UpdateCredentialsRes[result.code] || "Failed to update email.";
+          UpdateCredentialsRes[result.code] ||
+          "E-posta güncellenirken bir hata oluştu. Lütfen tekrar dene.";
         displayToast(errorMsg, "error");
         emailInput.focus();
       }

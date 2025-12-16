@@ -9,7 +9,7 @@ export function HeroCta() {
       >
         <span className="relative flex items-center gap-3">
           <i className="fa-solid fa-play text-black/80"></i>
-          Start Playing Now
+          Hemen Başla
           <i className="fa-solid fa-arrow-right group-hover:translate-x-2 transition-transform duration-300"></i>
         </span>
       </a>

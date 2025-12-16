@@ -35,7 +35,7 @@ export function SignInForm() {
                 type="text"
                 name="login"
                 id="login"
-                placeholder="Member ID or Email"
+                placeholder="Kullanıcı adın veya E-posta"
                 autoFocus={true}
                 autoComplete="off"
                 autoCapitalize="none"
@@ -53,7 +53,7 @@ export function SignInForm() {
                 type="password"
                 name="password"
                 id={passwordId}
-                placeholder="Secret Code"
+                placeholder="Şifre"
                 autoComplete="off"
                 maxLength={30}
                 className="w-full bg-neutral-900/80 text-white placeholder-neutral-500 pl-12 pr-12 py-4 rounded-xl border border-neutral-800 focus:border-yellow-500/50 focus:ring-2 focus:ring-yellow-500/20 outline-none transition-all duration-300"
@@ -72,14 +72,14 @@ export function SignInForm() {
                 id="remember"
                 className="w-4 h-4 rounded border-neutral-700 bg-neutral-900 text-amber-500 focus:ring-amber-500/20 focus:ring-offset-0"
               />
-              <span className="text-neutral-400 group-hover/check:text-neutral-300 transition-colors">Keep me signed in</span>
+              <span className="text-neutral-400 group-hover/check:text-neutral-300 transition-colors">Beni hatırla</span>
             </label>
             <a
               href="/password_reset"
               className="text-neutral-400 hover:text-amber-400 transition-colors"
               data-link
             >
-              Forgot credentials?
+              Şifremi unuttum
             </a>
           </div>
 
@@ -97,7 +97,7 @@ export function SignInForm() {
             ></span>
             <span className="flex items-center justify-center gap-3">
               <i className="fa-solid fa-door-open group-hover/btn:translate-x-[-4px] transition-transform"></i>
-              <span id="btn-label">Enter the Lounge</span>
+              <span id="btn-label">Giriş Yap</span>
               <i className="fa-solid fa-arrow-right opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all"></i>
             </span>
           </button>
@@ -105,7 +105,7 @@ export function SignInForm() {
           {/* Divider */}
           <div className="relative flex items-center gap-4 py-2">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
-            <span className="text-neutral-500 text-xs uppercase tracking-wider">or continue with</span>
+            <span className="text-neutral-500 text-xs uppercase tracking-wider">veya şununla devam et</span>
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
           </div>
 
@@ -114,15 +114,15 @@ export function SignInForm() {
 
           {/* Sign Up Link */}
           <p className="text-center text-neutral-400">
-            Not a member yet?{" "}
+            Henüz üye değil misin?{" "}
             <a href="register" className="text-amber-400 hover:text-amber-300 font-semibold transition-colors" data-link>
-              Apply for a paddle
+              Hemen kayıt ol
             </a>
           </p>
 
           {/* Footer Text */}
           <p className="text-xs text-center text-neutral-500 italic pt-2">
-            By signing in, you return to the arena — ready to rally, rise, and respect the code of champions.
+            Giriş yaparak arenaya dönüyorsun — mücadele etmeye, yükselmeye ve şampiyonların kurallarına saygı göstermeye hazırsın.
           </p>
         </form>
       </div>

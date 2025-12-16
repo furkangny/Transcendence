@@ -21,7 +21,7 @@ export function deleteAccount() {
     submitBtn.disabled = true;
     submitBtn.setAttribute("aria-busy", "true");
     spinner.classList.remove("hidden");
-    btnLabel.textContent = "deleting...";
+  btnLabel.textContent = "Siliniyor...";
 
     try {
       const response = await fetch("/auth/delete", {
@@ -42,7 +42,7 @@ export function deleteAccount() {
       } else if (response.status === 429) {
         setTimeout(() => {
           displayToast(
-            "Easy, champ! Let’s give it a second to catch up.",
+            "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
             "error"
           );
         }, feedbackDelay);
@@ -50,7 +50,7 @@ export function deleteAccount() {
         setTimeout(() => {
           const errorMsg =
             DeleteAccountRes[result?.code] ||
-            "Error during delete. Please try again.";
+            "Hesap silinirken bir hata oluştu. Lütfen tekrar dene.";
           displayToast(errorMsg, "error");
         }, feedbackDelay);
       }

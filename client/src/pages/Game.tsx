@@ -8,28 +8,28 @@ import { Loader } from "@/components/common/Loader";
 export function Game() {
   const me = getCurrentUser();
   if (!me) {
-    return <Loader text="Loading your game options..." />;
+  return <Loader text="Oyun seçeneklerin yükleniyor..." />;
   }
 
   const gameModes = [
     {
-      title: "Local Duel",
-      subtitle: "1 vs 1 — Lounge Duel",
-      text: "Challenge a friend beside you in an elegant local match. Pure skill, no lag — just legacy.",
+  title: "Yerel Düello",
+  subtitle: "1'e 1 — Yan yana maç",
+  text: "Yanındaki arkadaşına meydan oku. Tamamen yetenek, gecikme yok — sadece mücadele.",
       icon: "fa-solid fa-users",
       href: "/duel",
     },
     {
-      title: "Tournament",
-      subtitle: "Club Cup",
-      text: "Gather champions in-house. Compete in a local bracket to earn eternal bragging rights.",
+  title: "Turnuva",
+  subtitle: "Kulüp Kupası",
+  text: "Şampiyonları topla. Yerel turnuvada kapış",
       icon: "fa-solid fa-trophy",
       href: "/tournament",
     },
     {
-      title: "Remote Battle",
-      subtitle: "1 vs 1 — Online Arena",
-      text: "Face a rival across the network. Ping-pong from across the globe.",
+  title: "Online Kapışma",
+  subtitle: "1'e 1 — Çevrim içi arena",
+  text: "Ağ üzerinden rakibinle yüzleş.",
       icon: "fa-solid fa-globe",
       href: "/remote",
     },
@@ -58,10 +58,10 @@ export function Game() {
           {/* Başlık */}
           <div className="text-center mb-12">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-3">
-              Choose Your <span className="text-amber-400">Game Mode</span>
+              <span className="text-amber-400">Oyun Modunu</span> Seç
             </h1>
             <p className="text-neutral-400 text-base md:text-lg max-w-xl mx-auto">
-              Pick your playstyle and step into the arena of champions
+              Tarzını seç ve şampiyonların arenasına adım at
             </p>
           </div>
 
@@ -99,7 +99,7 @@ export function Game() {
             {/* Alt Bilgi */}
             <p className="text-center text-neutral-500 text-sm mt-6">
               <i className="fa-solid fa-info-circle mr-2 text-amber-500/50"></i>
-              Select a game mode to start playing
+              Oynamaya başlamak için bir oyun modu seç
             </p>
           </div>
 
@@ -110,11 +110,11 @@ export function Game() {
                 <i className="fa-solid fa-mobile-screen text-2xl text-amber-400"></i>
               </div>
               <h2 className="text-xl font-bold text-white mb-2">
-                Desktop Only
+                Sadece Masaüstü
               </h2>
               <p className="text-neutral-400 text-sm">
-                Game modes are only available on desktop or tablet devices.
-                Please use a larger screen to play.
+                Oyun modları yalnızca masaüstü veya tablet cihazlarda kullanılabilir.
+                Oynamak için daha büyük bir ekran kullan.
               </p>
             </div>
           </div>

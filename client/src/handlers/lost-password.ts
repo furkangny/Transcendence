@@ -39,7 +39,7 @@ export function handleLostPassword() {
     if (!emailRegex.test(email)) {
       otpEmailInput.focus();
       displayToast(
-        "That doesn’t look like a valid email. Check the format and try again.",
+  "Bu e-posta geçerli görünmüyor. Formatı kontrol edip tekrar dene.",
         "error"
       );
       return;
@@ -48,7 +48,7 @@ export function handleLostPassword() {
     submitBtn.disabled = true;
     submitBtn.setAttribute("aria-busy", "true");
     spinner.classList.remove("hidden");
-    btnLabel.textContent = "sending email...";
+  btnLabel.textContent = "Gönderiliyor...";
 
     try {
       const response = await fetch("/auth/lost-password", {
@@ -73,7 +73,7 @@ export function handleLostPassword() {
       } else if (response.status === 429) {
         setTimeout(() => {
           displayToast(
-            "Easy, champ! Let’s give it a second to catch up.",
+            "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
             "error"
           );
         }, feedbackDelay);
@@ -81,7 +81,7 @@ export function handleLostPassword() {
         setTimeout(() => {
           const errorMsg =
             LostPasswordRes[result?.code] ||
-            "Error during lost password request. Please try again.";
+            "Şifre sıfırlama isteği sırasında bir hata oluştu. Lütfen tekrar dene.";
           displayToast(errorMsg, "error");
         }, feedbackDelay);
       }

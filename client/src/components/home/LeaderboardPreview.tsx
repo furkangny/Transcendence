@@ -5,11 +5,11 @@ import { hydrateTopThree } from "@/handlers/hydrate-top-three";
 
 function getTagline(rank: number): string | undefined {
   if (rank === 1) {
-    return "The Champion of Champions!";
+  return "Şampiyonların Şampiyonu!";
   } else if (rank <= 10) {
-    return "You're close to greatness — keep pushing!";
+  return "Zirve yakın — devam et!";
   } else {
-    return "Your journey has just begun...";
+  return "Yolculuğun yeni başlıyor...";
   }
 }
 
@@ -33,13 +33,13 @@ export function LeaderboardPreview(props: { user: UserProfile }) {
             <div className="w-10 h-10 rounded-xl bg-amber-500 flex items-center justify-center">
               <i className="fa-solid fa-trophy text-black"></i>
             </div>
-            <h2 className="text-white font-bold text-xl">Top Players</h2>
+            <h2 className="text-white font-bold text-xl">En İyi Oyuncular</h2>
           </div>
           
           {/* Crown Badge */}
           <div className="flex items-center gap-2 px-3 py-1.5 bg-amber-500/20 rounded-full border border-amber-500/30">
             <i className="fa-solid fa-crown text-amber-400 text-sm"></i>
-            <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider">Elite</span>
+            <span className="text-amber-400 text-xs font-semibold uppercase tracking-wider">Elit</span>
           </div>
         </div>
 
@@ -66,7 +66,7 @@ export function LeaderboardPreview(props: { user: UserProfile }) {
               className="flex items-center gap-2 px-4 py-2.5 bg-amber-500 hover:bg-amber-400 text-black font-semibold rounded-xl transition-all duration-300 transform hover:scale-[1.02]"
               data-link
             >
-              <span>View All</span>
+              <span>Tümünü Gör</span>
               <i className="fa-solid fa-arrow-right text-sm"></i>
             </a>
           </div>

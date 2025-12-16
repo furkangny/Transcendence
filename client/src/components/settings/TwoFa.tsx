@@ -46,23 +46,23 @@ export function update2FAUI(methods: TwoFAMethod[]) {
     dotsMenuBtn.classList.remove("hidden");
 
     if (method.enabled) {
-      statusLabel.textContent = "Enabled";
+      statusLabel.textContent = "Aktif";
       statusLabel.className =
         "mb-2 ml-2 md:mb-0 px-2 py-1 text-xs font-bold rounded-full bg-green-100 text-green-700";
-      toggleEnableBtn.textContent = "Disable";
+      toggleEnableBtn.textContent = "Devre Dışı Bırak";
       if (method.is_primary) {
         primaryLabel.classList.remove("hidden");
-        primaryLabel.textContent = "Primary";
+        primaryLabel.textContent = "Birincil";
         primaryLabel.className =
           "mb-2 ml-2 md:mb-0 px-2 py-1 text-xs font-bold rounded-full bg-blue-100 text-blue-700";
       } else {
         primaryLabel.classList.add("hidden");
       }
     } else {
-      statusLabel.textContent = "Disabled";
+      statusLabel.textContent = "Kapalı";
       statusLabel.className =
         "mb-2 ml-2 md:mb-0 px-2 py-1 text-xs font-bold rounded-full bg-red-100 text-red-700";
-      toggleEnableBtn.textContent = "Enable";
+      toggleEnableBtn.textContent = "Etkinleştir";
       primaryLabel.classList.add("hidden");
     }
   });
@@ -123,7 +123,7 @@ function attach2FAListeners(type: "app" | "email") {
 
   if (toggleEnableBtn && !toggleEnableBtn.dataset.listener) {
     toggleEnableBtn.addEventListener("click", async () => {
-      if (toggleEnableBtn.textContent === "Disable") {
+  if (toggleEnableBtn.textContent === "Devre Dışı Bırak") {
         await disable2FA(type, () => check2FA().then(update2FAUI));
       } else {
         await enable2FA(type, () => check2FA().then(update2FAUI));
@@ -162,7 +162,7 @@ function TwoFaMode(type: "app" | "email") {
             id={`${type}-dots-menu-btn`}
             className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-pong-accent/20 transition"
             tabIndex={0}
-            aria-label="More actions"
+            aria-label="Daha fazla işlem"
             type="button"
           >
             <i className="fa-solid fa-ellipsis-vertical text-xl text-white"></i>
@@ -177,7 +177,7 @@ function TwoFaMode(type: "app" | "email") {
               type="button"
             >
               <i className="fa-solid fa-shield-halved text-pong-accent"></i>
-              <span className="font-semibold">Enable/Disable</span>
+              <span className="font-semibold">Aç/Kapat</span>
             </button>
             <button
               id={`${type}-set-primary`}
@@ -185,7 +185,7 @@ function TwoFaMode(type: "app" | "email") {
               type="button"
             >
               <i className="fa-solid fa-star text-yellow-500"></i>
-              <span className="font-semibold">Set as Primary</span>
+              <span className="font-semibold">Birincil Yap</span>
             </button>
           </div>
         </div>
@@ -224,15 +224,15 @@ function TwoFaMode(type: "app" | "email") {
               className={`block text-pong-secondary/80 ${fontSizes.smallTextFontSize} md:mt-3`}
             >
               {isApp
-                ? "Use an authenticator app for maximum security."
-                : "Receive one-time codes by email for easy access."}
+        ? "En yüksek güvenlik için doğrulama uygulaması kullan."
+        : "Kolay giriş için tek kullanımlık kodları e-posta ile al."}
             </span>
           </div>
         </div>
         <div className="flex gap-2 items-center mt-4 md:mt-0">
           <button id={`${type}-setup-btn`} className={styles.darkPrimaryBtn}>
             <i className="fa-solid fa-plus mr-2"></i>
-            Setup
+      Kur
           </button>
         </div>
       </div>

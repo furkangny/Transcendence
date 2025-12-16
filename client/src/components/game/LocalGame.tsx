@@ -106,8 +106,8 @@ export function LocalGame() {
   startMessage.className =
     "backdrop-blur-md absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 text-center text-2xl md:text-3xl font-bold text-pong-sport-muted px-6 py-4 rounded-xl shadow-lg flex flex-col gap-3 items-center justify-center";
   startMessage.innerHTML = `
-  <p>Press <span class="text-pong-dark-accent">F</span> to Serve</p>
-  <p class="text-sm mt-2 font-normal">Welcome to the BEE Lounge — let the rally begin.</p>
+  <p>Servis için <span class="text-pong-dark-accent">F</span>'ye bas</p>
+  <p class="text-sm mt-2 font-normal">BEE Lounge'a hoş geldin — mücadele başlasın.</p>
 `;
   container.appendChild(startMessage);
 

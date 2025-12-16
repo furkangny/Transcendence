@@ -69,30 +69,30 @@ export function Members() {
       <div className="w-full relative">
         <main className={styles.pageContent}>
           <SecondaryHeader
-            title="Meet the Members"
-            subtitle="Welcome to the beating heart of your club — grow your circle, connect with legends, and discover new challengers."
+            title="Üyelerle Tanış"
+            subtitle="Kulübün kalbine hoş geldin — çevreni büyüt, efsanelerle bağlantı kur ve yeni rakipler keşfet."
           />
 
           <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 text-center">
             <li id="pending-requests-item" className={styles.membersActiveBtn}>
-              Rally Requests
+              Gelen İstekler
             </li>
             <li id="friends-item" className={styles.membersInactiveBtn}>
-              My Inner Circle
+              Arkadaşlarım
             </li>
             <li id="all-members-item" className={styles.membersInactiveBtn}>
-              Entire Clubhouse
+              Tüm Kulüp
             </li>
           </ul>
 
           <div id="pending-container" className={styles.membersListStyle}>
             <h2 className="text-white text-2xl md:text-3xl font-bold tracking-tight flex items-center gap-3 mb-8">
               <span className="inline-block w-1.5 h-8 bg-pong-accent rounded-sm"></span>
-              Incoming Connections
+              Gelen Bağlantılar
             </h2>
             <p className="text-sm text-white/60 mt-[-1rem] mb-6 pl-6">
-              Fellow members have sent you a rally invite — accept their
-              challenge and expand your crew.
+              Diğer üyeler sana arkadaşlık isteği gönderdi — kabul et ve
+              ekibini büyüt.
             </p>
             <PendingRequestsList />
           </div>
@@ -100,11 +100,10 @@ export function Members() {
           <div id="friends-container" className={styles.membersListStyle}>
             <h2 className="text-white text-2xl md:text-3xl font-bold tracking-tight flex items-center gap-3 mb-8">
               <span className="inline-block w-1.5 h-8 bg-pong-accent rounded-sm"></span>
-              Trusted Allies
+              Güvenilir Dostlar
             </h2>
             <p className="text-sm text-white/60 mt-[-1rem] mb-6 pl-6">
-              These are your confirmed club companions — ready for a match or a
-              message at any time.
+              Bunlar kulüpteki onaylı dostların — ister maç, ister mesaj; her an hazır.
             </p>
             <FriendsList />
           </div>

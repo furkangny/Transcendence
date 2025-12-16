@@ -5,9 +5,10 @@ import { RankBadge } from "@/components/common/RankBadge";
 import { generateRankQuote } from "@/utils/generate-rank-quote";
 
 export function getWelcomeTitle(user: UserProfile): string {
-  if (user.gender === "M") return `Mr.`;
-  if (user.gender === "F") return `Ms.`;
-  return `Champ`;
+  // Türkçe karşılık: resmiyet yerine sıcak/oyun dili.
+  if (user.gender === "M") return `Bay`;
+  if (user.gender === "F") return `Bayan`;
+  return `Şampiyon`;
 }
 
 export function Hero(props: { user: UserProfile }) {
@@ -39,17 +40,17 @@ export function Hero(props: { user: UserProfile }) {
 
             {/* Kullanıcı Bilgileri */}
             <div className="flex-1">
-              <p className="text-amber-400 text-sm font-medium mb-1 tracking-wider uppercase">Welcome back</p>
+              <p className="text-amber-400 text-sm font-medium mb-1 tracking-wider uppercase">Hoş geldin</p>
               <h2 className={`${fontSizes.titleFontSize} font-black text-white mb-2 leading-tight`}>
                 {getWelcomeTitle(user)}{" "}
                 <span className="text-amber-400">{user.username}</span>
               </h2>
               <div className="flex items-center gap-3 flex-wrap">
                 <span className="px-3 py-1 bg-amber-500/20 text-amber-300 rounded-full text-sm font-semibold border border-amber-500/30">
-                  <i className="fa-solid fa-medal mr-1.5"></i>Rank #{user.rank}
+                  <i className="fa-solid fa-medal mr-1.5"></i>Sıra #{user.rank}
                 </span>
                 <span className="px-3 py-1 bg-yellow-500/20 text-yellow-300 rounded-full text-sm font-semibold border border-yellow-500/30">
-                  <i className="fa-solid fa-star mr-1.5"></i>Level {user.level}
+                  <i className="fa-solid fa-star mr-1.5"></i>Seviye {user.level}
                 </span>
               </div>
             </div>
@@ -72,7 +73,7 @@ export function Hero(props: { user: UserProfile }) {
               data-link
             >
               <i className="fa-solid fa-gamepad"></i>
-              <span>Play Now</span>
+              <span>Hemen Oyna</span>
             </a>
             <a 
               href="/my_profile" 
@@ -80,7 +81,7 @@ export function Hero(props: { user: UserProfile }) {
               data-link
             >
               <i className="fa-solid fa-user"></i>
-              <span>Profile</span>
+              <span>Profil</span>
             </a>
           </div>
         </div>

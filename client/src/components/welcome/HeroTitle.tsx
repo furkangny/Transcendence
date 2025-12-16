@@ -4,7 +4,7 @@ export function HeroTitle() {
       {/* Üst Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-2 bg-amber-500/10 rounded-full border border-amber-500/20 mb-8">
         <span className="w-2 h-2 bg-amber-400 rounded-full"></span>
-        <span className="text-amber-300 text-sm font-medium">Ready to Play</span>
+        <span className="text-amber-300 text-sm font-medium">Oynamaya Hazır</span>
       </div>
 
       {/* Ana Başlık */}

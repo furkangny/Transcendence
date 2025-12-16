@@ -8,14 +8,14 @@ export function ChangePassword() {
         className={`flex items-center gap-2 text-white ${fontSizes.smallTitleFontSize}`}
       >
         <span className="text-pong-accent">🔒</span>
-        <span className="font-bold">Change Your Password</span>
+  <span className="font-bold">Şifreni Değiştir</span>
       </h2>
 
       <p
         className={`${fontSizes.smallTextFontSize} text-white/80 leading-relaxed`}
       >
-        Keep your club identity secure by updating your password regularly.
-        Choose something strong and unique — a true champion’s defense.
+  Kulüp kimliğini güvende tutmak için şifreni düzenli olarak güncelle.
+  Güçlü ve benzersiz bir şifre seç — şampiyonların savunması böyle olur.
       </p>
 
       <a
@@ -23,11 +23,11 @@ export function ChangePassword() {
         data-link
         className={styles.darkPrimaryBtn + "md:w-fit"}
       >
-        Proceed to Update
+  Güncellemeye Git
       </a>
 
       <p className="text-pong-warning text-xs md:text-sm italic mt-3">
-        Use a mix of letters, numbers, and symbols for maximum protection.
+  En iyi koruma için harf, rakam ve sembolleri birlikte kullan.
       </p>
     </div>
   );

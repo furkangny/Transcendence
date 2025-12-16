@@ -14,11 +14,11 @@ export async function disable2FA(
     });
     const data = await res.json();
     displayToast(
-      Change2FaStateRes[data.code] || "2FA disabled",
+      Change2FaStateRes[data.code] || "2FA devre dışı bırakıldı",
       res.ok ? "success" : "error"
     );
     if (onUpdate) onUpdate();
   } catch {
-    displayToast("Disable 2FA error", "error");
+    displayToast("2FA kapatılırken hata oluştu", "error");
   }
 }

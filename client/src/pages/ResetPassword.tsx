@@ -34,8 +34,8 @@ export function ResetPassword() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-2xl mb-4">
                   <i className="fa-solid fa-lock text-black text-2xl"></i>
                 </div>
-                <h1 className="text-2xl md:text-3xl font-black text-white mb-2">Reset Your Password</h1>
-                <p className="text-neutral-400 text-sm">Set your new password to secure your spot in the club</p>
+                <h1 className="text-2xl md:text-3xl font-black text-white mb-2">Şifreni Sıfırla</h1>
+                <p className="text-neutral-400 text-sm">Kulüpteki yerini güvene almak için yeni şifreni belirle</p>
 
                 {/* Dekoratif Bouncing Icon */}
                 <div className="flex justify-center my-4">
@@ -49,14 +49,14 @@ export function ResetPassword() {
                 <div className="space-y-2">
                   <label className="block text-sm font-medium text-neutral-400">
                     <i className="fa-solid fa-key mr-2 text-amber-500/70"></i>
-                    New Password
+                    Yeni Şifre
                   </label>
                   <div className="relative">
                     <input
                       type="password"
                       name="password"
                       id={passwordId}
-                      placeholder="Enter new password"
+                      placeholder="Yeni şifreyi gir"
                       autoComplete="off"
                       maxLength={30}
                       className="
@@ -82,14 +82,14 @@ export function ResetPassword() {
                 <div className="space-y-2">
                   <label className="block text-sm font-medium text-neutral-400">
                     <i className="fa-solid fa-check-double mr-2 text-amber-500/70"></i>
-                    Confirm Password
+                    Şifreyi Onayla
                   </label>
                   <div className="relative">
                     <input
                       type="password"
                       name="confirmPassword"
                       id={confirmPasswordId}
-                      placeholder="Confirm new password"
+                      placeholder="Yeni şifreyi tekrar gir"
                       autoComplete="off"
                       maxLength={30}
                       className="
@@ -121,7 +121,7 @@ export function ResetPassword() {
                   <span id="spinner" className="hidden absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></span>
                   <span className="flex items-center justify-center gap-3">
                     <i className="fa-solid fa-lock"></i>
-                    <span id="btn-label">Lock It In</span>
+                    <span id="btn-label">Şifreyi Güncelle</span>
                   </span>
                 </button>
               </form>
@@ -129,20 +129,20 @@ export function ResetPassword() {
               {/* Back to Login */}
               <div className="mt-6 pt-6 border-t border-neutral-800 text-center">
                 <p className="text-neutral-400 text-sm">
-                  Remembered your paddle?{" "}
+                  Şifreni hatırladın mı?{" "}
                   <a 
                     href="/login" 
                     className="text-amber-400 hover:text-amber-300 font-semibold transition-colors underline underline-offset-4 decoration-amber-400/30 hover:decoration-amber-300"
                     data-link
                   >
-                    Return to Club Entrance
+                    Giriş sayfasına dön
                   </a>
                 </p>
               </div>
 
               {/* Footer Info */}
               <p className="mt-4 text-xs text-center text-neutral-500 italic">
-                This is how champions protect their legacy.
+                Şampiyonlar mirasını böyle korur.
               </p>
             </div>
           </div>

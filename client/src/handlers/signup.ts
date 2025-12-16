@@ -53,11 +53,11 @@ export function handleSignUp() {
       username: usernameInput.value.trim(),
       email: emailInput.value.trim(),
       gender:
-        genderInput.value === "Gentleman"
+        genderInput.value === "Gentleman" || genderInput.value === "Erkek"
           ? "M"
-          : genderInput.value === "Lady"
-          ? "F"
-          : "",
+          : genderInput.value === "Lady" || genderInput.value === "Kadın"
+            ? "F"
+            : "",
       password: passwordInput.value.trim(),
       confirmPassword: confirmPasswordInput.value.trim(),
     };
@@ -76,7 +76,7 @@ export function handleSignUp() {
     if (!emailRegex.test(userInfos.email)) {
       emailInput.focus();
       displayToast(
-        "That doesn’t look like a valid email. Check the format and try again.",
+  "Bu e-posta geçerli görünmüyor. Formatı kontrol edip tekrar dene.",
         "error"
       );
       return;
@@ -103,7 +103,7 @@ export function handleSignUp() {
     submitBtn.disabled = true;
     submitBtn.setAttribute("aria-busy", "true");
     spinner.classList.remove("hidden");
-    btnLabel.textContent = "registering...";
+  btnLabel.textContent = "Kayıt yapılıyor...";
 
     try {
       const response = await fetch("/auth/register", {
@@ -128,7 +128,7 @@ export function handleSignUp() {
       } else if (response.status === 429) {
         setTimeout(() => {
           displayToast(
-            "Easy, champ! Let’s give it a second to catch up.",
+            "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
             "error"
           );
         }, feedbackDelay);
@@ -136,7 +136,7 @@ export function handleSignUp() {
         setTimeout(() => {
           const errorMsg =
             RegisterRes[result?.code] ||
-            "Error during registration. Please try again.";
+            "Kayıt sırasında bir hata oluştu. Lütfen tekrar dene.";
           displayToast(errorMsg, "error");
         }, feedbackDelay);
       }

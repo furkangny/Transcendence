@@ -55,7 +55,7 @@ export function handleChangePassword() {
     }
     if (newPassword !== confirmPassword) {
       displayToast(
-        "New password and confirmation do not match. Please try again.",
+  "Yeni şifre ile doğrulama eşleşmiyor. Lütfen tekrar dene.",
         "error"
       );
       confirmPasswordInput.value = "";
@@ -66,7 +66,7 @@ export function handleChangePassword() {
     btn.disabled = true;
     btn.setAttribute("aria-busy", "true");
     spinner.classList.remove("hidden");
-    btnLabel.textContent = "updating...";
+  btnLabel.textContent = "Güncelleniyor...";
 
     try {
       const response = await fetch("/auth/update-credentials", {
@@ -104,7 +104,7 @@ export function handleChangePassword() {
       } else if (response.status === 429) {
         setTimeout(() => {
           displayToast(
-            "Easy, champ! Let’s give it a second to catch up.",
+            "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
             "error"
           );
         }, feedbackDelay);
@@ -112,7 +112,7 @@ export function handleChangePassword() {
         setTimeout(() => {
           const errorMsg =
             UpdateCredentialsRes[result?.code] ||
-            "Error during password change. Please try again.";
+            "Şifre değiştirirken bir hata oluştu. Lütfen tekrar dene.";
           displayToast(errorMsg, "error");
         }, feedbackDelay);
         oldPasswordInput.focus();

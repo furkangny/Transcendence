@@ -93,7 +93,7 @@ export function TopBar() {
         <input
           type="text"
           id="search-bar"
-          placeholder="Find A Racket Companion..."
+          placeholder="Rakip Ara..."
           className={styles.searchBarStyle}
           maxLength={15}
           autoComplete="off"
@@ -129,7 +129,7 @@ export function TopBar() {
           >
             <div className="flex justify-between items-center mb-4">
               <h3 className="font-bold text-lg lg:text-xl text-pong-secondary flex items-center gap-2">
-                <i className="fa-regular fa-bell"></i> Club Updates
+                <i className="fa-regular fa-bell"></i> Kulüp Güncellemeleri
               </h3>
               <button
                 id="clear-all-notifs"
@@ -137,7 +137,7 @@ export function TopBar() {
                 className="px-3 py-1 rounded bg-pong-dark-accent text-white hover:bg-pong-accent text-xs"
                 aria-label="Clear all notifications"
               >
-                Clear All
+                Tümünü Temizle
               </button>
             </div>
             <ul

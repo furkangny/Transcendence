@@ -28,13 +28,13 @@ export function ChangePassword() {
             <h2
               className={`${fontSizes.titleFontSize} text-center font-bold text-pong-accent mb-4`}
             >
-              Update Your Password
+              Şifreni Güncelle
             </h2>
             <p
               className={`${fontSizes.smallTextFontSize} text-pong-secondary/80 text-center mb-6`}
             >
-              For your security, please enter your current password and choose a
-              new one. Make sure your new password is strong and unique.
+              Güvenliğin için lütfen mevcut şifreni gir ve yeni bir şifre seç.
+              Yeni şifrenin güçlü ve benzersiz olduğundan emin ol.
             </p>
 
             <form
@@ -47,7 +47,7 @@ export function ChangePassword() {
                   name="old-password"
                   id={currentPasswordId}
                   className={styles.inputFieldDark + " mb-0 h-full"}
-                  placeholder="Current password"
+                  placeholder="Mevcut şifre"
                   autoComplete="off"
                   maxLength={30}
                   autofocus
@@ -60,7 +60,7 @@ export function ChangePassword() {
                   name="new-password"
                   id={newPasswordId}
                   className={styles.inputFieldDark + " mb-0 h-full"}
-                  placeholder="New password"
+                  placeholder="Yeni şifre"
                   autoComplete="off"
                   maxLength={30}
                 />
@@ -75,7 +75,7 @@ export function ChangePassword() {
                   name="confirm-new-password"
                   id={confirmNewPasswordId}
                   className={styles.inputFieldDark + " mb-0 h-full"}
-                  placeholder="Confirm new password"
+                  placeholder="Yeni şifreyi onayla"
                   autoComplete="off"
                   maxLength={30}
                 />
@@ -96,7 +96,7 @@ export function ChangePassword() {
                   aria-hidden="true"
                 ></span>
                 <i className="fa-solid fa-key mr-2" aria-hidden="true"></i>
-                <span id="btn-label">Update Password</span>
+                <span id="btn-label">Şifreyi Güncelle</span>
               </button>
             </form>
           </div>

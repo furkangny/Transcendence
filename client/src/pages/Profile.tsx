@@ -13,7 +13,7 @@ import { NoPerformanceData } from "@/components/profile/NoPerformanceData";
 export function Profile() {
   const user = getCurrentUser();
   if (!user) {
-    return <Loader text="Preparing your club profile..." />;
+  return <Loader text="Kulüp profilin hazırlanıyor..." />;
   }
 
   const hasPerformanceData = user.matches_played > 0;
@@ -32,8 +32,8 @@ export function Profile() {
       <div className="w-full relative">
         <main className={styles.pageContent}>
           <SecondaryHeader
-            title="Member Profile"
-            subtitle="Your identity, matches & achievements in the BEEPONG."
+            title="Üye Profili"
+            subtitle="BEEPONG'daki kimliğin, maçların ve başarıların."
           />
 
           <div className={containerClassName}>
@@ -49,7 +49,7 @@ export function Profile() {
               </div>
             ) : (
               <NoPerformanceData
-                spanText="The club’s leaderboard awaits you! Play your first match to start building your stats, earn XP, and unlock exclusive BEE achievements."
+                spanText="Kulüp sıralaması seni bekliyor! İlk maçını oyna; istatistiklerin oluşsun, XP kazan ve özel BEE başarımlarını aç."
                 isMember={false}
               />
             )}

@@ -13,13 +13,13 @@ export function VerifyLogin() {
 
   const subtitle =
     twofaMode === "email"
-      ? "A verification parchment has been dispatched to your email. Kindly enter the code below to proceed."
-      : "Your code awaits in your authenticator ledger. Kindly enter it below to confirm your identity.";
+  ? "Doğrulama kodu e-posta adresine gönderildi. Devam etmek için aşağıya kodu gir."
+  : "Kodun doğrulama uygulamanda. Kimliğini doğrulamak için aşağıya gir.";
 
   const label =
     twofaMode === "email"
-      ? "Summon the code from your inbox"
-      : "Summon the code from your app";
+  ? "E-postana gelen kodu gir"
+  : "Uygulamadaki kodu gir";
 
   return (
     <section className="relative overflow-hidden w-full min-h-screen bg-black">
@@ -40,7 +40,7 @@ export function VerifyLogin() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-500 rounded-2xl mb-4">
                   <i className="fa-solid fa-shield-halved text-black text-2xl"></i>
                 </div>
-                <h1 className="text-2xl md:text-3xl font-black text-white mb-2">Verify Your Identity</h1>
+                <h1 className="text-2xl md:text-3xl font-black text-white mb-2">Kimliğini Doğrula</h1>
                 <p className="text-neutral-400 text-sm">{subtitle}</p>
               </div>
 
@@ -59,7 +59,7 @@ export function VerifyLogin() {
                   <span id="spinner" className="hidden absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 border-2 border-black/30 border-t-black rounded-full animate-spin"></span>
                   <span className="flex items-center justify-center gap-3">
                     <i className="fa-solid fa-check-double"></i>
-                    <span id="btn-label">Verify</span>
+                    <span id="btn-label">Doğrula</span>
                   </span>
                 </button>
               </form>
@@ -67,7 +67,7 @@ export function VerifyLogin() {
               {/* Footer Info */}
               <div className="mt-6 pt-6 border-t border-neutral-800">
                 <p className="text-xs text-center text-neutral-500 italic">
-                  Trouble receiving your code? Contact the front desk.
+                  Kod gelmiyor mu? Destek ile iletişime geç.
                 </p>
               </div>
             </div>

@@ -13,7 +13,7 @@ export async function setPrimaryMethod(
       body: JSON.stringify({ method }),
     });
     const data = await res.json();
-    const msg = Change2FaStateRes[data.code] || "Primary method updated";
+  const msg = Change2FaStateRes[data.code] || "Birincil yöntem güncellendi";
     displayToast(msg, res.ok ? "success" : "error");
     if (onUpdate) onUpdate();
   } catch {

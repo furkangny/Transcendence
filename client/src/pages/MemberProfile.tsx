@@ -241,7 +241,7 @@ export async function MemberProfile(id: number) {
   ]);
 
   if (!user) {
-    return Loader({ text: "Checking user profile..." });
+  return Loader({ text: "Kullanıcı profili kontrol ediliyor..." });
   }
 
   const hasPerformanceData = user.matches_played > 0;
@@ -264,8 +264,8 @@ export async function MemberProfile(id: number) {
 
   main.appendChild(
     SecondaryHeader({
-      title: `${getWelcomeTitle(user)} ${user.username}'s Profile`,
-      subtitle: "Identity, matches & achievements of this club member.",
+  title: `${getWelcomeTitle(user)} ${user.username} Profili`,
+  subtitle: "Bu kulüp üyesinin kimliği, maçları ve başarıları.",
     })
   );
 
@@ -298,12 +298,12 @@ export async function MemberProfile(id: number) {
     blockedMsg.className =
       "w-full text-center text-pong-error text-lg font-semibold py-10";
     blockedMsg.innerHTML =
-      '<i class="fa-solid fa-ban mr-2"></i>This member is blocked. Unblock to view stats and history.';
+      '<i class="fa-solid fa-ban mr-2"></i>Bu üye engellenmiş. İstatistik ve geçmişi görmek için engeli kaldır.';
     right.appendChild(blockedMsg);
   } else if (!hasPerformanceData) {
     right.appendChild(
       NoPerformanceData({
-        spanText: "This player hasn’t stepped onto the BEE court yet.",
+        spanText: "Bu oyuncu henüz BEE sahasına adım atmadı.",
         isMember: true,
       })
     );

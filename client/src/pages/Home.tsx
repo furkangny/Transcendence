@@ -11,7 +11,7 @@ import { startRecentActivityListener } from "@/services/recent-activity-service"
 export function Home() {
   const user = getCurrentUser();
   if (!user) {
-    return <Loader text="Preparing your club profile..." />;
+  return <Loader text="Kulüp profilin hazırlanıyor..." />;
   }
 
   setTimeout(() => {

@@ -141,7 +141,7 @@ export function SignUpForm() {
                 type="text"
                 name="username"
                 id="username"
-                placeholder="Choose your noble name"
+                placeholder="Kullanıcı adını seç"
                 autoFocus={true}
                 autoComplete="off"
                 autoCapitalize="none"
@@ -159,7 +159,7 @@ export function SignUpForm() {
                 type="text"
                 name="email"
                 id="email"
-                placeholder="Your correspondence address"
+                placeholder="E-posta adresin"
                 autoComplete="off"
                 autoCapitalize="none"
                 spellCheck="false"
@@ -176,7 +176,7 @@ export function SignUpForm() {
                 type="text"
                 name="title"
                 id="title"
-                placeholder="Select your title of elegance"
+                placeholder="Ünvanını seç"
                 autoComplete="off"
                 className="w-full bg-neutral-900/80 text-white placeholder-neutral-500 pl-12 pr-10 py-4 rounded-xl border border-neutral-800 focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all duration-300 cursor-pointer"
                 readOnly
@@ -198,7 +198,7 @@ export function SignUpForm() {
                   className="outline-none px-5 py-3.5 text-neutral-300 hover:bg-amber-500/20 focus:bg-amber-500/30 cursor-pointer transition-colors duration-150 ease-in-out"
                   tabIndex={0}
                 >
-                  Gentleman
+                  Erkek
                 </p>
                 <p
                   id="gender-female"
@@ -207,7 +207,7 @@ export function SignUpForm() {
                   className="outline-none px-5 py-3.5 text-neutral-300 hover:bg-amber-500/20 focus:bg-amber-500/30 cursor-pointer transition-colors duration-150 ease-in-out"
                   tabIndex={0}
                 >
-                  Lady
+                  Kadın
                 </p>
               </div>
             </div>
@@ -221,7 +221,7 @@ export function SignUpForm() {
                 type="password"
                 name="password"
                 id={passwordId}
-                placeholder="Secret code"
+                placeholder="Şifre"
                 autoComplete="off"
                 maxLength={30}
                 className="w-full bg-neutral-900/80 text-white placeholder-neutral-500 pl-12 pr-12 py-4 rounded-xl border border-neutral-800 focus:border-yellow-500/50 focus:ring-2 focus:ring-yellow-500/20 outline-none transition-all duration-300"
@@ -240,7 +240,7 @@ export function SignUpForm() {
                 type="password"
                 name="password"
                 id={confirmPasswordId}
-                placeholder="Confirm secret code"
+                placeholder="Şifreyi onayla"
                 autoComplete="off"
                 maxLength={30}
                 className="w-full bg-neutral-900/80 text-white placeholder-neutral-500 pl-12 pr-12 py-4 rounded-xl border border-neutral-800 focus:border-amber-500/50 focus:ring-2 focus:ring-amber-500/20 outline-none transition-all duration-300"
@@ -265,7 +265,7 @@ export function SignUpForm() {
             ></span>
             <span className="flex items-center justify-center gap-3">
               <i className="fa-solid fa-champagne-glasses group-hover/btn:translate-x-[-4px] transition-transform"></i>
-              <span id="btn-label">Register Your Racket</span>
+              <span id="btn-label">Kayıt Ol</span>
               <i className="fa-solid fa-arrow-right opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-1 transition-all"></i>
             </span>
           </button>
@@ -273,7 +273,7 @@ export function SignUpForm() {
           {/* Divider */}
           <div className="relative flex items-center gap-4 py-2">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
-            <span className="text-neutral-500 text-xs uppercase tracking-wider">or continue with</span>
+            <span className="text-neutral-500 text-xs uppercase tracking-wider">veya şununla devam et</span>
             <div className="flex-1 h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
           </div>
 
@@ -282,15 +282,15 @@ export function SignUpForm() {
 
           {/* Sign In Link */}
           <p className="text-center text-neutral-400">
-            Already a member of the hall?{" "}
+            Zaten üye misin?{" "}
             <a href="login" className="text-amber-400 hover:text-amber-300 font-semibold transition-colors" data-link>
-              Enter the lounge
+              Giriş yap
             </a>
           </p>
 
           {/* Footer Text */}
           <p className="text-xs text-center text-neutral-500 italic pt-2">
-            By joining, you swear on honor to compete fairly and uphold the spirit of ping pong.
+            Katılarak, adil şekilde yarışacağına ve ping pong ruhunu koruyacağına söz veriyorsun.
           </p>
         </form>
       </div>

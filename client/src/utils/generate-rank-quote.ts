@@ -1,24 +1,24 @@
 export function generateRankQuote(rank: number): string {
   const quotes = {
     champion: [
-      "Crowned as a Club Champion — the table trembles at your name.",
-      "You’ve conquered the court — a true Club Champion.",
-      "Victory follows you like a loyal shadow. Club Champion forever.",
+  "Kulüp Şampiyonu oldun — masalar adını duyunca titriyor.",
+  "Sahayı fethettin — gerçek bir Kulüp Şampiyonu.",
+  "Zafer peşini bırakmıyor. Kulüp Şampiyonu sonsuza dek.",
     ],
     elite: [
-      "An Elite Contender — your rallies are poetry in motion.",
-      "Grace and power — hallmarks of a true Elite Contender.",
-      "Just a step from the throne. Keep swinging, Elite Contender.",
+  "Elit bir Aday — rallilerin hareketli bir şiir gibi.",
+  "Zerafet ve güç — gerçek bir Elit Aday’ın imzası.",
+  "Tahta sadece bir adım var. Devam et, Elit Aday.",
     ],
     veteran: [
-      "A Veteran Player — seasoned, sharp, and steady under fire.",
-      "Wisdom at the table, strength in the serve — a Veteran Player shines.",
-      "You've seen it all. A steady hand in the storm — Veteran Player.",
+  "Tecrübeli bir Oyuncu — pişmiş, keskin, baskıda bile sağlam.",
+  "Masada bilgelik, serviste güç — Tecrübeli Oyuncu parlıyor.",
+  "Her şeyi gördün. Fırtınada bile sakin el — Tecrübeli Oyuncu.",
     ],
     challenger: [
-      "Still a Challenger — every match is a step toward glory.",
-      "A Challenger today, a Champion tomorrow. Stay sharp.",
-      "Your journey has just begun, Challenger — paddle up.",
+  "Hâlâ Aday — her maç ihtişama atılan bir adım.",
+  "Bugün Aday, yarın Şampiyon. Keskin kal.",
+  "Yolculuğun daha yeni başladı — raketi kap, hazır ol.",
     ],
   };
 

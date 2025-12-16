@@ -22,7 +22,7 @@ export function handleVerifyCredentials() {
     const otpCode = codeInput.value.trim();
 
     if (!otpCode || otpCode.length != 6) {
-      displayToast("Please enter a valid 6-digit code.", "error");
+  displayToast("Lütfen geçerli bir 6 haneli kod gir.", "error");
       codeInput.focus();
       return;
     }
@@ -71,7 +71,7 @@ export function handleVerifyCredentials() {
       } else if (response.status === 429) {
         setTimeout(() => {
           displayToast(
-            "Easy, champ! Let’s give it a second to catch up.",
+            "Sakin ol şampiyon! Biraz bekleyip tekrar dene.",
             "error"
           );
         }, feedbackDelay);
@@ -80,7 +80,7 @@ export function handleVerifyCredentials() {
       } else {
         const errorMsg =
           VerifyUpdateCredentialsRes[result.code] ||
-          "Failed to verify credentials. Please try again.";
+          "Doğrulama sırasında bir hata oluştu. Lütfen tekrar dene.";
         displayToast(errorMsg, "error");
         codeInput.value = "";
         codeInput.focus();

@@ -5,15 +5,15 @@ export function NavBar() {
   const navItems = [
     { path: "/salon", icon: "fa-house", label: "Salon" },
     { path: "/arena", icon: "fa-table-tennis-paddle-ball", label: "Arena" },
-    { path: "/chamber", icon: "fa-ranking-star", label: "Chamber" },
-    { path: "/lounge", icon: "fa-message", label: "Lounge" },
-    { path: "/members", icon: "fa-user-group", label: "Members" },
+    { path: "/chamber", icon: "fa-ranking-star", label: "Sıralama" },
+    { path: "/lounge", icon: "fa-message", label: "Sohbet" },
+    { path: "/members", icon: "fa-user-group", label: "Üyeler" },
   ];
 
   const settingsItems = [
-    { label: "Security", path: "/security", icon: "fa-lock" },
-    { label: "Blocked", path: "/muted_players", icon: "fa-user-slash" },
-    { label: "Delete Account", path: "/wipe_account", icon: "fa-trash" },
+    { label: "Güvenlik", path: "/security", icon: "fa-lock" },
+    { label: "Engellenenler", path: "/muted_players", icon: "fa-user-slash" },
+    { label: "Hesabı Sil", path: "/wipe_account", icon: "fa-trash" },
   ];
 
   // Remove old elements
@@ -82,7 +82,7 @@ export function NavBar() {
   `;
   settingsBtn.innerHTML = `
     <i class="fa-solid fa-gear"></i>
-    <span>Settings</span>
+    <span>Ayarlar</span>
     <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="desktop-settings-arrow"></i>
   `;
 
@@ -119,7 +119,7 @@ export function NavBar() {
   `;
   logoutLink.innerHTML = `
     <i class="fa-solid fa-arrow-right-from-bracket w-4 text-red-500/70"></i>
-    <span>Logout</span>
+    <span>Çıkış Yap</span>
   `;
   settingsDropdown.appendChild(logoutLink);
 
@@ -211,7 +211,7 @@ export function NavBar() {
   `;
   mobileLogout.innerHTML = `
     <i class="fa-solid fa-arrow-right-from-bracket w-5"></i>
-    <span>Logout</span>
+    <span>Çıkış Yap</span>
   `;
   mobileLogout.addEventListener("click", closeMobileMenu);
   mobileMenuInner.appendChild(mobileLogout);

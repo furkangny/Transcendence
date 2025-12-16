@@ -21,7 +21,7 @@ export async function hydratePendingRequests(me: UserProfile) {
   const pending = (await listPendingRequests()).received;
 
   if (!pending.length) {
-    list.innerHTML = `<li class="text-pong-dark-secondary text-center py-2 text-sm md:text-lg">No pending friend requests — time to serve up some invites!</li>`;
+    list.innerHTML = `<li class="text-pong-dark-secondary text-center py-2 text-sm md:text-lg">Bekleyen arkadaşlık isteği yok — Davet gönderme zamanı!</li>`;
     return;
   }
 

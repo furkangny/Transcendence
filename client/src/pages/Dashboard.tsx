@@ -12,7 +12,7 @@ import { navigateTo } from "@/utils/navigate-to-link";
 export function Dashboard() {
   const user = getCurrentUser();
   if (!user) {
-    return <Loader text="Preparing your club profile..." />;
+    return <Loader text="Profil hazırlanıyor..." />;
   }
 
   setTimeout(() => {
@@ -98,8 +98,8 @@ export function Dashboard() {
       <div className="w-full relative">
         <main className={styles.pageContent}>
           <SecondaryHeader
-            title="The Honor Board"
-            subtitle="Your Club Dashboard — track progress, stats & rivalries"
+            title="Onur Panosu"
+            subtitle="Kulüp Gösterge Panelin — ilerleme, istatistik ve rekabeti takip et"
           />
 
           <div className="w-full max-w-5xl flex flex-col md:flex-row items-center gap-6 bg-pong-dark-highlight/10 rounded-md p-6 shadow-lg border border-pong-dark-highlight/30 backdrop-blur-md">
@@ -127,13 +127,13 @@ export function Dashboard() {
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-4 text-center">
                 <div>
                   <p className="text-xs text-pong-bg-pong-dark-primary/80 uppercase">
-                    Total Matches
+                    Toplam Maç
                   </p>
                   <p className="text-lg font-semibold">{user.matches_played}</p>
                 </div>
                 <div>
                   <p className="text-xs text-pong-bg-pong-dark-primary/80 uppercase">
-                    Victories
+                    Zaferler
                   </p>
                   <p className="text-lg font-semibold text-pong-success">
                     {user.matches_won}
@@ -141,7 +141,7 @@ export function Dashboard() {
                 </div>
                 <div>
                   <p className="text-xs text-pong-bg-pong-dark-primary/80 uppercase">
-                    Losses
+                    Yenilgiler
                   </p>
                   <p className="text-lg font-semibold text-pong-error">
                     {user.matches_played - user.matches_won}
@@ -149,7 +149,7 @@ export function Dashboard() {
                 </div>
                 <div>
                   <p className="text-xs text-pong-bg-pong-dark-primary/80 uppercase">
-                    Win Ratio
+                    Kazanma Oranı
                   </p>
                   <p className="text-lg font-semibold text-yellow-400">
                     {user.matches_played > 0
@@ -175,10 +175,10 @@ export function Dashboard() {
           <div className="w-full max-w-5xl mx-auto rounded-md shadow-xl bg-pong-dark-bg/80 border border-pong-dark-highlight/30 backdrop-blur-md">
             <div className="p-4 border-b border-pong-dark-highlight/40 flex justify-between items-center">
               <h2 className="text-xl md:text-2xl font-bold text-pong-dark-secondary">
-                Honor Board
+                Onur Panosu
               </h2>
               <span className="text-sm text-pong-dark-secondary/80">
-                Club Rankings
+                Kulüp Sıralaması
               </span>
             </div>
 
@@ -186,11 +186,11 @@ export function Dashboard() {
               <table className="min-w-full text-pong-dark-primary text-sm md:text-base">
                 <thead className="sticky top-0 z-10 bg-pong-dark-bg/90 border-b border-pong-dark-highlight/30 text-pong-dark-primary backdrop-blur-2xl">
                   <tr>
-                    <th className="p-4 text-left font-semibold ">Player</th>
-                    <th className="p-4 text-left font-semibold">Rank</th>
-                    <th className="p-4 text-left font-semibold">Level</th>
-                    <th className="p-4 text-left font-semibold">Win Rate</th>
-                    <th className="p-4 text-left font-semibold">Matches</th>
+                    <th className="p-4 text-left font-semibold ">Oyuncu</th>
+                    <th className="p-4 text-left font-semibold">Sıra</th>
+                    <th className="p-4 text-left font-semibold">Seviye</th>
+                    <th className="p-4 text-left font-semibold">Kazanma Oranı</th>
+                    <th className="p-4 text-left font-semibold">Maçlar</th>
                   </tr>
                 </thead>
                 <tbody
@@ -202,7 +202,7 @@ export function Dashboard() {
                       colSpan={6}
                       className="text-center py-8 text-pong-bg-pong-dark-primary/80"
                     >
-                      Loading leaderboard...
+                      Sıralama yükleniyor...
                     </td>
                   </tr>
                 </tbody>
